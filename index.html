@@ -1,78 +1,93 @@
-<!-- =========================
-transform:translateX(-300px);
-}
-100%{
-transform:translateX(100vw);
-}
-}
+<!DOCTYPE html>
 
-/* =========================
-AJOUTER APRÈS LA HERO SECTION
-========================= */
+</section>
 
-<section class="section fade">
+<section class="section fade" id="contact">
+
+<div class="contact-box">
 
 <div class="section-title">
-<h2>NOTRE UNIVERS</h2>
+<h2>CONTACT</h2>
 <div class="neon-line"></div>
-<p>Une expérience premium inspirée des garages japonais underground.</p>
 </div>
 
-<div class="stats">
+<form action="https://formspree.io/f/TON_ID" method="POST">
 
-<div class="stat-box">
-<div class="stat-number">250+</div>
-<p>Véhicules traités</p>
-</div>
+<input type="text" placeholder="Nom" required>
 
-<div class="stat-box">
-<div class="stat-number">5★</div>
-<p>Avis clients premium</p>
-</div>
+<input type="email" placeholder="Email" required>
 
-<div class="stat-box">
-<div class="stat-number">100%</div>
-<p>Finition showroom</p>
+<input type="tel" placeholder="Téléphone">
+
+<textarea placeholder="Votre demande..."></textarea>
+
+<button type="submit" class="btn btn-primary">
+<i class="fa-solid fa-paper-plane"></i>
+ENVOYER
+</button>
+
+</form>
+
+<div class="socials">
+<a href="#">
+<i class="fab fa-instagram"></i>
+</a>
+
+<a href="#">
+<i class="fab fa-facebook-f"></i>
+</a>
+
+<a href="#">
+<i class="fab fa-tiktok"></i>
+</a>
 </div>
 
 </div>
 
 </section>
 
-<!-- =========================
-SECTION AVANT / APRÈS
-========================= -->
+<a href="https://wa.me/33662550681" target="_blank" class="whatsapp">
+<i class="fab fa-whatsapp"></i>
+</a>
 
-<section class="section fade">
-
-<div class="section-title">
-<h2>AVANT / APRÈS</h2>
-<div class="neon-line"></div>
-<p>Des transformations dignes d'un showroom japonais.</p>
-</div>
-
-<div class="before-after">
-<img src="https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?q=80&w=1400">
-<img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?q=80&w=1400">
-</div>
-
-</section>
-
-<!-- =========================
-SCRIPT PARALLAXE 3D
-========================= -->
+<footer>
+© 2026 AutoDetailing46 • Tokyo Underground Premium Garage
+</footer>
 
 <script>
+
+const fades = document.querySelectorAll('.fade');
+
+window.addEventListener('scroll',()=>{
+
+fades.forEach(fade=>{
+
+const top = fade.getBoundingClientRect().top;
+
+if(top < window.innerHeight - 100){
+fade.classList.add('show');
+}
+
+});
+
+});
 
 const heroBox = document.querySelector('.hero-box');
 
 window.addEventListener('mousemove',(e)=>{
 
-const x = (window.innerWidth / 2 - e.pageX) / 35;
-const y = (window.innerHeight / 2 - e.pageY) / 35;
+if(window.innerWidth > 900){
 
-heroBox.style.transform = `rotateY(${x}deg) rotateX(${-y}deg)`;
+const x = (window.innerWidth / 2 - e.pageX) / 40;
+const y = (window.innerHeight / 2 - e.pageY) / 40;
+
+heroBox.style.transform = `perspective(1000px) rotateY(${x}deg) rotateX(${-y}deg)`;
+
+}
 
 });
 
 </script>
+
+</body>
+</html>
