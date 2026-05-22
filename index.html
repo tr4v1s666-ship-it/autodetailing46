@@ -6,40 +6,41 @@
 <title>AutoDetailing46</title>
 
 <style>
+
+/* BASE */
 body{
   margin:0;
-  font-family:'Segoe UI',sans-serif;
-  background:#f5f7fa;
+  font-family:'Poppins',sans-serif;
+  background:#f2f6f9;
   color:#222;
 }
 
 /* HERO */
 .hero{
   height:100vh;
-  background:url("https://images.unsplash.com/photo-1549921296-3ecf6a5161be") center/cover;
+  background:url("https://images.unsplash.com/photo-1511919884226-fd3cad34687c") center/cover;
   display:flex;
   align-items:center;
   justify-content:center;
 }
 
 .hero-box{
-  background:rgba(255,255,255,0.85);
+  background:rgba(255,255,255,0.9);
   padding:50px;
   border-radius:25px;
   text-align:center;
-  backdrop-filter:blur(10px);
-  box-shadow:0 10px 40px rgba(0,0,0,0.2);
+  box-shadow:0 15px 40px rgba(0,0,0,0.2);
 }
 
 /* LOGO */
 .logo{
   font-size:50px;
   font-weight:bold;
-  letter-spacing:3px;
+  letter-spacing:2px;
 }
 
 .logo span{
-  color:#00c2ff;
+  color:#00a8ff;
 }
 
 /* TEXT */
@@ -50,20 +51,27 @@ body{
 
 .tagline{
   margin-top:15px;
-  color:#777;
-  font-size:14px;
+  font-size:16px;
+  color:#444;
+  font-weight:500;
 }
 
-/* BUTTON */
+/* CTA */
 .btn{
   display:inline-block;
   margin-top:25px;
-  padding:14px 30px;
-  border-radius:30px;
-  background:linear-gradient(90deg,#00c2ff,#00e6a8);
+  padding:14px 35px;
+  border-radius:40px;
+  background:linear-gradient(90deg,#00a8ff,#00e6a8);
   color:white;
   text-decoration:none;
   font-weight:bold;
+  font-size:16px;
+  transition:0.3s;
+}
+
+.btn:hover{
+  transform:scale(1.05);
 }
 
 /* SECTION */
@@ -72,23 +80,24 @@ body{
   text-align:center;
 }
 
-/* SERVICES GRID */
+/* GRID */
 .grid{
   display:flex;
   flex-wrap:wrap;
   justify-content:center;
   gap:30px;
+  margin-top:40px;
 }
 
-/* CARDS */
+/* CARD */
 .card{
   width:280px;
   border-radius:20px;
   overflow:hidden;
   background:white;
   box-shadow:0 10px 25px rgba(0,0,0,0.1);
-  cursor:pointer;
   transition:0.3s;
+  cursor:pointer;
 }
 
 .card:hover{
@@ -101,9 +110,10 @@ body{
   object-fit:cover;
 }
 
-.overlay{
+.card-title{
   padding:20px;
   font-weight:bold;
+  font-size:18px;
 }
 
 /* POPUP */
@@ -112,7 +122,7 @@ body{
   position:fixed;
   width:100%;
   height:100%;
-  background:rgba(0,0,0,0.7);
+  background:rgba(0,0,0,0.6);
   top:0;
   left:0;
   justify-content:center;
@@ -121,7 +131,6 @@ body{
 
 .popup-content{
   background:white;
-  color:black;
   padding:40px;
   border-radius:20px;
   width:300px;
@@ -129,8 +138,17 @@ body{
 
 .close{
   margin-top:20px;
-  cursor:pointer;
   color:red;
+  cursor:pointer;
+}
+
+/* CONTACT */
+.contact-box{
+  background:linear-gradient(90deg,#00a8ff,#00e6a8);
+  color:white;
+  padding:50px;
+  border-radius:20px;
+  display:inline-block;
 }
 
 /* WHATSAPP */
@@ -139,10 +157,11 @@ body{
   bottom:20px;
   right:20px;
   background:#25D366;
-  padding:15px;
+  padding:18px;
   border-radius:50%;
   color:white;
 }
+
 </style>
 
 <script>
@@ -167,14 +186,14 @@ function closePopup(id){
     </div>
 
     <div class="subtitle">
-      Esthétique automobile premium • Saint-Céré
+      Nettoyage & esthétique automobile premium
     </div>
 
     <div class="tagline">
-      Une voiture propre attire toujours les regards
+      Faites briller votre véhicule • Attirez les regards • Profitez d’un rendu showroom
     </div>
 
-    <a href="#contact" class="btn">Réserver</a>
+    <a href="#contact" class="btn">Réserver maintenant</a>
 
   </div>
 </div>
@@ -186,18 +205,18 @@ function closePopup(id){
 <div class="grid">
 
 <div class="card" onclick="openPopup('interieur')">
-  <img src="https://images.unsplash.com/photo-1607863680198-23d4b2565df0">
-  <div class="overlay">Intérieur</div>
+  https://images.unsplash.com/photo-1607863680198-23d4b2565df0
+  <div class="card-title">Nettoyage intérieur</div>
 </div>
 
 <div class="card" onclick="openPopup('exterieur')">
   <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70">
-  <div class="overlay">Extérieur</div>
+  <div class="card-title">Lavage extérieur</div>
 </div>
 
 <div class="card" onclick="openPopup('polissage')">
-  <img src="https://images.unsplash.com/photo-1511919884226-fd3cad34687c">
-  <div class="overlay">Polissage</div>
+  https://images.unsplash.com/photo-1511919884226-fd3cad34687c
+  <div class="card-title">Polissage & brillance</div>
 </div>
 
 </div>
@@ -218,7 +237,7 @@ function closePopup(id){
 <div class="popup-content">
 <h3>Extérieur</h3>
 <p>Lavage simple</p>
-<p>Shampoing cirant</p>
+<p>Shampoing premium</p>
 <p>Protection wax</p>
 <div class="close" onclick="closePopup('exterieur')">Fermer</div>
 </div>
@@ -227,7 +246,7 @@ function closePopup(id){
 <div class="popup" id="polissage">
 <div class="popup-content">
 <h3>Polissage</h3>
-<p>Correction défauts</p>
+<p>Correction rayures</p>
 <p>Rénovation peinture</p>
 <p>Finition miroir</p>
 <div class="close" onclick="closePopup('polissage')">Fermer</div>
@@ -236,15 +255,19 @@ function closePopup(id){
 
 <!-- CONTACT -->
 <div class="section" id="contact">
-<h2>Réservation</h2>
-<p>06 62 55 06 81</p>
+  <div class="contact-box">
+    <h2>Réservation rapide</h2>
+    <p>📞 06 62 55 06 81</p>
 
-<a href="https://wa.me/33662550681" class="btn">
-WhatsApp
-</a>
+    <a href="https://wa.me/33662550681" class="btn">
+      Contacter sur WhatsApp
+    </a>
+  </div>
 </div>
 
-<a href="https://wa.me/33662550681" class="whatsapp">💬</a>
+<a href="https://wa.me/33662550681" class="whatsapp">
+💬
+</a>
 
 </body>
 </html>
