@@ -8,7 +8,7 @@
 <style>
 body{
   margin:0;
-  font-family:'Helvetica Neue',sans-serif;
+  font-family:'Segoe UI',sans-serif;
   background:black;
   color:white;
 }
@@ -28,35 +28,58 @@ body{
   position:absolute;
   width:100%;
   height:100%;
-  background:rgba(0,0,0,0.6);
+  background:rgba(0,0,0,0.65);
 }
 
 .hero-box{
   position:relative;
   z-index:2;
   text-align:center;
+  background:rgba(0,0,0,0.5);
+  padding:50px;
+  border-radius:25px;
+  backdrop-filter:blur(10px);
 }
 
-h1{
-  font-size:60px;
-  letter-spacing:3px;
-  margin:0;
+/* LOGO */
+.logo{
+  font-size:55px;
+  letter-spacing:4px;
+  text-transform:uppercase;
+  font-weight:bold;
+  background:linear-gradient(90deg,#fff,#888,#fff);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
 }
 
+.logo span{
+  background:linear-gradient(90deg,#00ffc3,#00a8ff);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+}
+
+/* TEXT */
 .subtitle{
+  margin-top:10px;
   color:#bbb;
-  margin-top:15px;
 }
 
+.tagline{
+  margin-top:15px;
+  color:#888;
+  font-size:14px;
+}
+
+/* BUTTON */
 .btn{
   display:inline-block;
-  margin-top:30px;
-  padding:15px 35px;
-  background:linear-gradient(90deg,#00ffae,#00cfff);
-  color:black;
+  margin-top:25px;
+  padding:14px 30px;
   border-radius:30px;
-  font-weight:bold;
+  background:linear-gradient(90deg,#00ffc3,#00a8ff);
+  color:black;
   text-decoration:none;
+  font-weight:bold;
   transition:0.3s;
 }
 
@@ -91,35 +114,25 @@ h1{
   width:100%;
   height:200px;
   object-fit:cover;
-  display:block;
 }
 
-.card-overlay{
+.overlay{
   position:absolute;
   bottom:0;
   width:100%;
   background:rgba(0,0,0,0.7);
   padding:20px;
-  transition:0.3s;
-}
-
-.card:hover .card-overlay{
-  background:rgba(0,0,0,0.9);
-}
-
-.card-title{
-  font-size:20px;
 }
 
 /* POPUP */
 .popup{
   display:none;
   position:fixed;
-  top:0;
-  left:0;
   width:100%;
   height:100%;
   background:rgba(0,0,0,0.9);
+  top:0;
+  left:0;
   justify-content:center;
   align-items:center;
 }
@@ -129,13 +142,13 @@ h1{
   padding:40px;
   border-radius:20px;
   text-align:center;
-  width:320px;
+  width:300px;
 }
 
 .close{
   margin-top:20px;
   cursor:pointer;
-  color:#ff4d4d;
+  color:red;
 }
 
 /* WHATSAPP */
@@ -144,14 +157,18 @@ h1{
   bottom:20px;
   right:20px;
   background:#25D366;
-  padding:16px;
+  padding:15px;
   border-radius:50%;
 }
 </style>
 
 <script>
-function openPopup(id){document.getElementById(id).style.display="flex";}
-function closePopup(id){document.getElementById(id).style.display="none";}
+function openPopup(id){
+document.getElementById(id).style.display="flex";
+}
+function closePopup(id){
+document.getElementById(id).style.display="none";
+}
 </script>
 
 </head>
@@ -161,12 +178,21 @@ function closePopup(id){document.getElementById(id).style.display="none";}
 <!-- HERO -->
 <div class="hero">
   <div class="hero-box">
-    <h1>AutoDetailing46</h1>
+
+    <div class="logo">
+      AUTO<span>DETAILING</span>46
+    </div>
+
     <div class="subtitle">
-      Detailing automobile • Saint-Céré
+      Esthétique automobile haut de gamme • Saint-Céré
+    </div>
+
+    <div class="tagline">
+      Une finition qui attire le regard. Une présence qui marque.
     </div>
 
     <a href="#contact" class="btn">Réserver</a>
+
   </div>
 </div>
 
@@ -176,65 +202,51 @@ function closePopup(id){document.getElementById(id).style.display="none";}
 
 <div class="grid">
 
-<!-- INTERIEUR -->
 <div class="card" onclick="openPopup('interieur')">
   <img src="https://images.unsplash.com/photo-1607863680198-23d4b2565df0">
-  <div class="card-overlay">
-    <div class="card-title">Intérieur</div>
-  </div>
+  <div class="overlay">Intérieur</div>
 </div>
 
-<!-- EXTERIEUR -->
 <div class="card" onclick="openPopup('exterieur')">
   <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70">
-  <div class="card-overlay">
-    <div class="card-title">Extérieur</div>
-  </div>
+  <div class="overlay">Extérieur</div>
 </div>
 
-<!-- POLISSAGE -->
 <div class="card" onclick="openPopup('polissage')">
   <img src="https://images.unsplash.com/photo-1511919884226-fd3cad34687c">
-  <div class="card-overlay">
-    <div class="card-title">Polissage</div>
-  </div>
+  <div class="overlay">Polissage</div>
 </div>
 
 </div>
 </div>
 
-<!-- POPUP INTERIEUR -->
+<!-- POPUPS -->
 <div class="popup" id="interieur">
 <div class="popup-content">
-<h2>Intérieur</h2>
+<h3>Intérieur</h3>
 <p>Lavage classique</p>
 <p>Shampouinage sièges</p>
 <p>Traitement vapeur</p>
-
 <div class="close" onclick="closePopup('interieur')">Fermer</div>
 </div>
 </div>
 
-<!-- POPUP EXTERIEUR -->
 <div class="popup" id="exterieur">
 <div class="popup-content">
-<h2>Extérieur</h2>
+<h3>Extérieur</h3>
 <p>Lavage simple</p>
 <p>Shampoing cirant</p>
 <p>Protection wax</p>
-
 <div class="close" onclick="closePopup('exterieur')">Fermer</div>
 </div>
 </div>
 
-<!-- POPUP POLISSAGE -->
 <div class="popup" id="polissage">
 <div class="popup-content">
-<h2>Polissage</h2>
+<h3>Polissage</h3>
 <p>Correction défauts</p>
 <p>Rénovation peinture</p>
 <p>Finition miroir</p>
-
 <div class="close" onclick="closePopup('polissage')">Fermer</div>
 </div>
 </div>
@@ -249,7 +261,7 @@ Contacter via WhatsApp
 </a>
 </div>
 
-<a href="https://wa.me/33662550681" class="whatsapp">💬</a>
+<a href="https://wa.me/33662550681" class="whatsapp"></a>
 
 </body>
 </html>
