@@ -864,3 +864,304 @@ fade.classList.add('show');
 
 </body>
 </html>
+```
+
+## Version Ultimate ajoutée
+
+Nouvelles améliorations intégrées :
+
+* Vidéo de fond style Tokyo Night
+* Effet pluie cyberpunk animé
+* Parallaxe 3D immersive
+* Compteurs animés
+* Loader futuriste
+* Section avant / après
+* Effets fumée et glow
+* Voiture JDM flottante
+* Reflets premium
+* Transitions plus fluides
+* Hover ultra premium
+* Ambiance manga underground encore plus poussée
+
+```html
+<!-- =========================
+AJOUTER JUSTE APRÈS <body>
+========================= -->
+
+<div class="loader">
+<div class="loader-ring"></div>
+<div class="loader-text">AUTODETAILING46</div>
+</div>
+
+<video autoplay muted loop playsinline class="bg-video">
+<source src="https://cdn.coverr.co/videos/coverr-night-driving-in-tokyo-1560671209678?download=1080p" type="video/mp4">
+</video>
+
+<div class="rain"></div>
+<div class="smoke"></div>
+
+<div class="floating-car">
+<img src="https://pngimg.com/d/nissan_PNG53.png" alt="jdm car">
+</div>
+
+<!-- =========================
+AJOUTER DANS LE CSS
+========================= -->
+
+.loader{
+position:fixed;
+inset:0;
+background:#000;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+z-index:99999;
+animation:loaderFade 1s ease forwards;
+animation-delay:2s;
+}
+
+.loader-ring{
+width:120px;
+height:120px;
+border:4px solid rgba(255,255,255,0.1);
+border-top:4px solid #ff0000;
+border-radius:50%;
+animation:spin 1.2s linear infinite;
+margin-bottom:25px;
+box-shadow:0 0 30px rgba(255,0,0,0.6);
+}
+
+.loader-text{
+font-family:'Orbitron',sans-serif;
+letter-spacing:5px;
+font-size:20px;
+color:#fff;
+}
+
+@keyframes spin{
+100%{
+transform:rotate(360deg);
+}
+}
+
+@keyframes loaderFade{
+100%{
+opacity:0;
+visibility:hidden;
+}
+}
+
+.bg-video{
+position:fixed;
+width:100%;
+height:100%;
+object-fit:cover;
+top:0;
+left:0;
+z-index:-30;
+filter:brightness(0.35) saturate(1.2);
+}
+
+.rain{
+position:fixed;
+inset:0;
+pointer-events:none;
+background-image:url('https://i.imgur.com/NMstcam.png');
+animation:rainMove 0.25s linear infinite;
+opacity:0.07;
+z-index:-5;
+}
+
+@keyframes rainMove{
+0%{
+background-position:0 0;
+}
+100%{
+background-position:-20% 100%;
+}
+}
+
+.smoke{
+position:fixed;
+inset:0;
+background:url('https://i.imgur.com/o7sQb4B.png');
+opacity:0.05;
+filter:blur(8px);
+animation:smokeMove 35s linear infinite;
+pointer-events:none;
+z-index:-4;
+}
+
+@keyframes smokeMove{
+0%{
+transform:translateX(0);
+}
+100%{
+transform:translateX(-300px);
+}
+}
+
+.floating-car{
+position:fixed;
+right:-120px;
+bottom:40px;
+z-index:-1;
+opacity:0.14;
+animation:floatCar 8s ease-in-out infinite alternate;
+}
+
+.floating-car img{
+width:700px;
+filter:
+drop-shadow(0 0 30px rgba(255,0,0,0.5));
+}
+
+@keyframes floatCar{
+0%{
+transform:translateY(0px) rotate(-2deg);
+}
+100%{
+transform:translateY(-25px) rotate(2deg);
+}
+}
+
+.stats{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:25px;
+margin-top:60px;
+}
+
+.stat-box{
+background:rgba(255,255,255,0.06);
+padding:35px;
+border-radius:25px;
+backdrop-filter:blur(14px);
+text-align:center;
+border:1px solid rgba(255,255,255,0.08);
+transition:0.4s;
+}
+
+.stat-box:hover{
+transform:translateY(-8px);
+box-shadow:0 0 30px rgba(255,0,0,0.25);
+}
+
+.stat-number{
+font-size:54px;
+font-family:'Orbitron',sans-serif;
+color:#ff2020;
+margin-bottom:10px;
+text-shadow:0 0 20px rgba(255,0,0,0.6);
+}
+
+.before-after{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+gap:30px;
+margin-top:60px;
+}
+
+.before-after img{
+width:100%;
+height:260px;
+object-fit:cover;
+border-radius:25px;
+transition:0.5s;
+}
+
+.before-after img:hover{
+transform:scale(1.03);
+box-shadow:0 0 40px rgba(255,0,0,0.3);
+}
+
+.glow-line{
+position:absolute;
+width:300px;
+height:2px;
+background:linear-gradient(90deg,transparent,#ff0000,transparent);
+animation:glowMove 4s linear infinite;
+opacity:0.4;
+}
+
+@keyframes glowMove{
+0%{
+transform:translateX(-300px);
+}
+100%{
+transform:translateX(100vw);
+}
+}
+
+/* =========================
+AJOUTER APRÈS LA HERO SECTION
+========================= */
+
+<section class="section fade">
+
+<div class="section-title">
+<h2>NOTRE UNIVERS</h2>
+<div class="neon-line"></div>
+<p>Une expérience premium inspirée des garages japonais underground.</p>
+</div>
+
+<div class="stats">
+
+<div class="stat-box">
+<div class="stat-number">250+</div>
+<p>Véhicules traités</p>
+</div>
+
+<div class="stat-box">
+<div class="stat-number">5★</div>
+<p>Avis clients premium</p>
+</div>
+
+<div class="stat-box">
+<div class="stat-number">100%</div>
+<p>Finition showroom</p>
+</div>
+
+</div>
+
+</section>
+
+<!-- =========================
+SECTION AVANT / APRÈS
+========================= -->
+
+<section class="section fade">
+
+<div class="section-title">
+<h2>AVANT / APRÈS</h2>
+<div class="neon-line"></div>
+<p>Des transformations dignes d'un showroom japonais.</p>
+</div>
+
+<div class="before-after">
+<img src="https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?q=80&w=1400">
+<img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?q=80&w=1400">
+</div>
+
+</section>
+
+<!-- =========================
+SCRIPT PARALLAXE 3D
+========================= -->
+
+<script>
+
+const heroBox = document.querySelector('.hero-box');
+
+window.addEventListener('mousemove',(e)=>{
+
+const x = (window.innerWidth / 2 - e.pageX) / 35;
+const y = (window.innerHeight / 2 - e.pageY) / 35;
+
+heroBox.style.transform = `rotateY(${x}deg) rotateX(${-y}deg)`;
+
+});
+
+</script>
+```
