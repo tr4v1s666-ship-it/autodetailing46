@@ -1,273 +1,551 @@
-
+```html
 <!DOCTYPE html>
 <html lang="fr">
 <head>
 <meta charset="UTF-8">
-<title>AutoDetailing46</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>AutoDetailing46 | Tokyo Night Garage</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 
 <style>
 
-/* BASE */
+/* =========================
+RESET
+========================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    scroll-behavior:smooth;
+}
+
 body{
-  margin:0;
-  font-family:'Poppins',sans-serif;
-  background:#f2f6f9;
-  color:#222;
+    background:#05070b;
+    color:white;
+    font-family:'Poppins',sans-serif;
+    overflow-x:hidden;
 }
 
-/* HERO */
-.hero{
-  height:100vh;
-  background:url("https://images.unsplash.com/photo-1511919884226-fd3cad34687c") center/cover;
-  display:flex;
-  align-items:center;
-  justify-content:center;
+/* =========================
+BACKGROUND EFFECT
+========================= */
+
+body::before{
+    content:"";
+    position:fixed;
+    width:100%;
+    height:100%;
+    background:
+    radial-gradient(circle at top right,#00e5ff15,transparent 30%),
+    radial-gradient(circle at bottom left,#ff003c18,transparent 35%);
+    z-index:-2;
 }
 
-.hero-box{
-  background:rgba(255,255,255,0.9);
-  padding:50px;
-  border-radius:25px;
-  text-align:center;
-  box-shadow:0 15px 40px rgba(0,0,0,0.2);
+body::after{
+    content:"";
+    position:fixed;
+    inset:0;
+    background:url("https://www.transparenttextures.com/patterns/asfalt-dark.png");
+    opacity:0.3;
+    z-index:-1;
 }
 
-/* LOGO */
+/* =========================
+NAVBAR
+========================= */
+
+nav{
+    position:fixed;
+    width:100%;
+    top:0;
+    left:0;
+    padding:20px 8%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    background:rgba(0,0,0,0.45);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid rgba(255,255,255,0.05);
+    z-index:1000;
+}
+
 .logo{
-  font-size:50px;
-  font-weight:bold;
-  letter-spacing:2px;
+    font-family:'Orbitron',sans-serif;
+    font-size:28px;
+    font-weight:900;
+    letter-spacing:3px;
 }
 
 .logo span{
-  color:#00a8ff;
+    color:#00e5ff;
+    text-shadow:
+    0 0 8px #00e5ff,
+    0 0 18px #00e5ff;
 }
 
-/* TEXT */
+.nav-links a{
+    text-decoration:none;
+    color:white;
+    margin-left:30px;
+    transition:0.3s;
+    font-size:15px;
+}
+
+.nav-links a:hover{
+    color:#00e5ff;
+}
+
+/* =========================
+HERO
+========================= */
+
+.hero{
+    height:100vh;
+    position:relative;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:20px;
+
+    background:
+    linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.85)),
+    url("https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?q=80&w=1600&auto=format&fit=crop")
+    center/cover;
+}
+
+.hero::after{
+    content:"";
+    position:absolute;
+    bottom:0;
+    width:100%;
+    height:200px;
+    background:linear-gradient(to top,#05070b,transparent);
+}
+
+.hero-content{
+    position:relative;
+    z-index:2;
+    max-width:900px;
+}
+
+.hero h1{
+    font-family:'Orbitron',sans-serif;
+    font-size:90px;
+    line-height:1;
+    margin-bottom:20px;
+    text-transform:uppercase;
+}
+
+.hero h1 span{
+    color:#00e5ff;
+    text-shadow:
+    0 0 10px #00e5ff,
+    0 0 25px #00e5ff,
+    0 0 50px #00e5ff;
+}
+
 .subtitle{
-  margin-top:10px;
-  color:#555;
+    color:#d5d5d5;
+    font-size:22px;
+    margin-bottom:20px;
 }
 
 .tagline{
-  margin-top:15px;
-  font-size:16px;
-  color:#444;
-  font-weight:500;
+    color:#9aa4b2;
+    line-height:1.8;
+    margin-bottom:40px;
 }
 
-/* CTA */
+/* =========================
+BUTTON
+========================= */
+
 .btn{
-  display:inline-block;
-  margin-top:25px;
-  padding:14px 35px;
-  border-radius:40px;
-  background:linear-gradient(90deg,#00a8ff,#00e6a8);
-  color:white;
-  text-decoration:none;
-  font-weight:bold;
-  font-size:16px;
-  transition:0.3s;
+    display:inline-block;
+    padding:16px 40px;
+    border-radius:50px;
+    background:linear-gradient(90deg,#00e5ff,#006eff);
+    color:white;
+    text-decoration:none;
+    font-weight:600;
+    letter-spacing:1px;
+    box-shadow:0 0 25px rgba(0,229,255,0.5);
+    transition:0.35s;
 }
 
 .btn:hover{
-  transform:scale(1.05);
+    transform:translateY(-5px);
+    box-shadow:0 0 40px rgba(0,229,255,0.9);
 }
 
-/* SECTION */
+/* =========================
+SECTION
+========================= */
+
 .section{
-  padding:80px 20px;
-  text-align:center;
+    padding:110px 8%;
 }
 
-/* GRID */
+.section-title{
+    text-align:center;
+    margin-bottom:70px;
+}
+
+.section-title h2{
+    font-family:'Orbitron',sans-serif;
+    font-size:44px;
+    margin-bottom:15px;
+}
+
+.neon-line{
+    width:140px;
+    height:4px;
+    margin:auto;
+    border-radius:50px;
+    background:linear-gradient(to right,#ff003c,#00e5ff);
+    box-shadow:0 0 20px #00e5ff;
+}
+
+.section-title p{
+    color:#8f98a5;
+    margin-top:20px;
+}
+
+/* =========================
+CARDS
+========================= */
+
 .grid{
-  display:flex;
-  flex-wrap:wrap;
-  justify-content:center;
-  gap:30px;
-  margin-top:40px;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:35px;
 }
 
-/* CARD */
 .card{
-  width:280px;
-  border-radius:20px;
-  overflow:hidden;
-  background:white;
-  box-shadow:0 10px 25px rgba(0,0,0,0.1);
-  transition:0.3s;
-  cursor:pointer;
+    background:#0c1118;
+    border-radius:25px;
+    overflow:hidden;
+    border:1px solid rgba(255,255,255,0.06);
+    transition:0.4s;
+    position:relative;
 }
 
 .card:hover{
-  transform:translateY(-10px);
+    transform:translateY(-12px);
+    border-color:#00e5ff55;
+    box-shadow:
+    0 0 25px rgba(0,229,255,0.15),
+    0 0 60px rgba(0,229,255,0.08);
 }
 
 .card img{
-  width:100%;
-  height:180px;
-  object-fit:cover;
+    width:100%;
+    height:230px;
+    object-fit:cover;
 }
 
-.card-title{
-  padding:20px;
-  font-weight:bold;
-  font-size:18px;
+.card-content{
+    padding:25px;
 }
 
-/* POPUP */
-.popup{
-  display:none;
-  position:fixed;
-  width:100%;
-  height:100%;
-  background:rgba(0,0,0,0.6);
-  top:0;
-  left:0;
-  justify-content:center;
-  align-items:center;
+.card h3{
+    font-size:24px;
+    margin-bottom:15px;
 }
 
-.popup-content{
-  background:white;
-  padding:40px;
-  border-radius:20px;
-  width:300px;
+.card p{
+    color:#96a0ad;
+    line-height:1.7;
+    margin-bottom:20px;
 }
 
-.close{
-  margin-top:20px;
-  color:red;
-  cursor:pointer;
+.price{
+    color:#00e5ff;
+    font-weight:600;
+    font-size:18px;
 }
 
-/* CONTACT */
+/* =========================
+CONTACT
+========================= */
+
+.contact{
+    padding:120px 20px;
+    text-align:center;
+}
+
 .contact-box{
-  background:linear-gradient(90deg,#00a8ff,#00e6a8);
-  color:white;
-  padding:50px;
-  border-radius:20px;
-  display:inline-block;
+    max-width:750px;
+    margin:auto;
+    background:#0c1118;
+    border:1px solid rgba(255,255,255,0.06);
+    padding:70px 30px;
+    border-radius:35px;
+    box-shadow:0 0 50px rgba(0,0,0,0.5);
 }
 
-/* WHATSAPP */
+.contact-box h2{
+    font-size:50px;
+    font-family:'Orbitron',sans-serif;
+    margin-bottom:20px;
+}
+
+.contact-box p{
+    color:#9aa4b2;
+    margin-bottom:30px;
+}
+
+.phone{
+    font-size:28px;
+    color:#00e5ff;
+    margin-bottom:35px;
+    text-shadow:0 0 15px #00e5ff55;
+}
+
+/* =========================
+WHATSAPP
+========================= */
+
 .whatsapp{
-  position:fixed;
-  bottom:20px;
-  right:20px;
-  background:#25D366;
-  padding:18px;
-  border-radius:50%;
-  color:white;
+    position:fixed;
+    bottom:25px;
+    right:25px;
+    width:68px;
+    height:68px;
+    border-radius:50%;
+    background:#25D366;
+    color:white;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-decoration:none;
+    font-size:32px;
+    box-shadow:0 0 25px rgba(37,211,102,0.7);
+    z-index:1000;
+}
+
+/* =========================
+FOOTER
+========================= */
+
+footer{
+    padding:30px;
+    text-align:center;
+    color:#6f7885;
+    border-top:1px solid rgba(255,255,255,0.05);
+}
+
+/* =========================
+RESPONSIVE
+========================= */
+
+@media(max-width:768px){
+
+    .hero h1{
+        font-size:52px;
+    }
+
+    .subtitle{
+        font-size:18px;
+    }
+
+    .section-title h2{
+        font-size:34px;
+    }
+
+    .contact-box h2{
+        font-size:36px;
+    }
+
+    nav{
+        padding:18px 5%;
+    }
+
+    .nav-links a{
+        margin-left:15px;
+        font-size:14px;
+    }
+
 }
 
 </style>
-
-<script>
-function openPopup(id){
-  document.getElementById(id).style.display="flex";
-}
-function closePopup(id){
-  document.getElementById(id).style.display="none";
-}
-</script>
-
 </head>
 
 <body>
 
-<!-- HERO -->
-<div class="hero">
-  <div class="hero-box">
+<!-- NAVBAR -->
 
-    <div class="logo">
-      AUTO<span>DETAILING</span>46
-    </div>
+<nav>
 
-    <div class="subtitle">
-      Nettoyage & esthétique automobile premium
-    </div>
-
-    <div class="tagline">
-      Faites briller votre véhicule • Attirez les regards • Profitez d’un rendu showroom
-    </div>
-
-    <a href="#contact" class="btn">Réserver maintenant</a>
-
-  </div>
+<div class="logo">
+AUTO<span>DETAILING</span>46
 </div>
 
+<div class="nav-links">
+<a href="#services">Prestations</a>
+<a href="#contact">Contact</a>
+</div>
+
+</nav>
+
+<!-- HERO -->
+
+<section class="hero">
+
+<div class="hero-content">
+
+<h1>
+TOKYO <span>DETAILING</span>
+</h1>
+
+<div class="subtitle">
+Garage japonais de nuit • Esthétique automobile premium
+</div>
+
+<div class="tagline">
+Lavage detailing • Polissage miroir • Protection carrosserie • Finition showroom <br>
+Inspiré des garages underground de Tokyo.
+</div>
+
+<a href="#contact" class="btn">
+RÉSERVER MAINTENANT
+</a>
+
+</div>
+
+</section>
+
 <!-- SERVICES -->
-<div class="section">
-<h2>Prestations</h2>
+
+<section class="section" id="services">
+
+<div class="section-title">
+
+<h2>PRESTATIONS</h2>
+
+<div class="neon-line"></div>
+
+<p>
+Des finitions propres, brillantes et premium pour faire ressortir chaque détail.
+</p>
+
+</div>
 
 <div class="grid">
 
-<div class="card" onclick="openPopup('interieur')">
-  https://images.unsplash.com/photo-1607863680198-23d4b2565df0
-  <div class="card-title">Nettoyage intérieur</div>
+<!-- CARD -->
+
+<div class="card">
+
+<img src="https://images.unsplash.com/photo-1607863680198-23d4b2565df0?q=80&w=1200&auto=format&fit=crop">
+
+<div class="card-content">
+
+<h3>Nettoyage intérieur</h3>
+
+<p>
+Aspiration complète, vapeur, plastiques, sièges et finitions premium.
+</p>
+
+<div class="price">
+À partir de 49€
 </div>
 
-<div class="card" onclick="openPopup('exterieur')">
-  <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70">
-  <div class="card-title">Lavage extérieur</div>
-</div>
-
-<div class="card" onclick="openPopup('polissage')">
-  https://images.unsplash.com/photo-1511919884226-fd3cad34687c
-  <div class="card-title">Polissage & brillance</div>
 </div>
 
 </div>
+
+<!-- CARD -->
+
+<div class="card">
+
+<img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?q=80&w=1200&auto=format&fit=crop">
+
+<div class="card-content">
+
+<h3>Lavage extérieur</h3>
+
+<p>
+Mousse active, shampoing premium, jantes et protection brillante.
+</p>
+
+<div class="price">
+À partir de 39€
 </div>
 
-<!-- POPUPS -->
-<div class="popup" id="interieur">
-<div class="popup-content">
-<h3>Intérieur</h3>
-<p>Lavage complet</p>
-<p>Shampouinage sièges</p>
-<p>Traitement vapeur</p>
-<div class="close" onclick="closePopup('interieur')">Fermer</div>
-</div>
 </div>
 
-<div class="popup" id="exterieur">
-<div class="popup-content">
-<h3>Extérieur</h3>
-<p>Lavage simple</p>
-<p>Shampoing premium</p>
-<p>Protection wax</p>
-<div class="close" onclick="closePopup('exterieur')">Fermer</div>
-</div>
 </div>
 
-<div class="popup" id="polissage">
-<div class="popup-content">
-<h3>Polissage</h3>
-<p>Correction rayures</p>
-<p>Rénovation peinture</p>
-<p>Finition miroir</p>
-<div class="close" onclick="closePopup('polissage')">Fermer</div>
+<!-- CARD -->
+
+<div class="card">
+
+<img src="https://images.unsplash.com/photo-1511919884226-fd3cad34687c?q=80&w=1200&auto=format&fit=crop">
+
+<div class="card-content">
+
+<h3>Polissage miroir</h3>
+
+<p>
+Correction des micro-rayures et effet miroir haute intensité.
+</p>
+
+<div class="price">
+Sur devis
 </div>
+
 </div>
+
+</div>
+
+</div>
+
+</section>
 
 <!-- CONTACT -->
-<div class="section" id="contact">
-  <div class="contact-box">
-    <h2>Réservation rapide</h2>
-    <p>📞 06 62 55 06 81</p>
 
-    <a href="https://wa.me/33662550681" class="btn">
-      Contacter sur WhatsApp
-    </a>
-  </div>
+<section class="contact" id="contact">
+
+<div class="contact-box">
+
+<h2>RÉSERVATION</h2>
+
+<div class="neon-line"></div>
+
+<p>
+Prenez rendez-vous rapidement et redonnez un aspect showroom à votre véhicule.
+</p>
+
+<div class="phone">
+📞 06 62 55 06 81
 </div>
+
+<a href="https://wa.me/33662550681" class="btn">
+CONTACTER SUR WHATSAPP
+</a>
+
+</div>
+
+</section>
+
+<!-- WHATSAPP -->
 
 <a href="https://wa.me/33662550681" class="whatsapp">
 💬
 </a>
 
+<!-- FOOTER -->
+
+<footer>
+© 2026 AutoDetailing46 • Tokyo Night Garage
+</footer>
+
 </body>
 </html>
+```
