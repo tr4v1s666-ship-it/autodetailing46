@@ -9,64 +9,48 @@
 body{
   margin:0;
   font-family:'Segoe UI',sans-serif;
-  background:black;
-  color:white;
+  background:#f5f7fa;
+  color:#222;
 }
 
 /* HERO */
 .hero{
   height:100vh;
-  background:url("https://images.unsplash.com/photo-1494976388531-d1058494cdd8") center/cover;
+  background:url("https://images.unsplash.com/photo-1549921296-3ecf6a5161be") center/cover;
   display:flex;
   align-items:center;
   justify-content:center;
-  position:relative;
-}
-
-.hero::after{
-  content:"";
-  position:absolute;
-  width:100%;
-  height:100%;
-  background:rgba(0,0,0,0.65);
 }
 
 .hero-box{
-  position:relative;
-  z-index:2;
-  text-align:center;
-  background:rgba(0,0,0,0.5);
+  background:rgba(255,255,255,0.85);
   padding:50px;
   border-radius:25px;
+  text-align:center;
   backdrop-filter:blur(10px);
+  box-shadow:0 10px 40px rgba(0,0,0,0.2);
 }
 
 /* LOGO */
 .logo{
-  font-size:55px;
-  letter-spacing:4px;
-  text-transform:uppercase;
+  font-size:50px;
   font-weight:bold;
-  background:linear-gradient(90deg,#fff,#888,#fff);
-  -webkit-background-clip:text;
-  -webkit-text-fill-color:transparent;
+  letter-spacing:3px;
 }
 
 .logo span{
-  background:linear-gradient(90deg,#00ffc3,#00a8ff);
-  -webkit-background-clip:text;
-  -webkit-text-fill-color:transparent;
+  color:#00c2ff;
 }
 
 /* TEXT */
 .subtitle{
   margin-top:10px;
-  color:#bbb;
+  color:#555;
 }
 
 .tagline{
   margin-top:15px;
-  color:#888;
+  color:#777;
   font-size:14px;
 }
 
@@ -76,15 +60,10 @@ body{
   margin-top:25px;
   padding:14px 30px;
   border-radius:30px;
-  background:linear-gradient(90deg,#00ffc3,#00a8ff);
-  color:black;
+  background:linear-gradient(90deg,#00c2ff,#00e6a8);
+  color:white;
   text-decoration:none;
   font-weight:bold;
-  transition:0.3s;
-}
-
-.btn:hover{
-  transform:scale(1.05);
 }
 
 /* SECTION */
@@ -93,7 +72,7 @@ body{
   text-align:center;
 }
 
-/* GRID */
+/* SERVICES GRID */
 .grid{
   display:flex;
   flex-wrap:wrap;
@@ -101,27 +80,30 @@ body{
   gap:30px;
 }
 
-/* CARD */
+/* CARDS */
 .card{
-  width:300px;
+  width:280px;
   border-radius:20px;
   overflow:hidden;
-  position:relative;
+  background:white;
+  box-shadow:0 10px 25px rgba(0,0,0,0.1);
   cursor:pointer;
+  transition:0.3s;
+}
+
+.card:hover{
+  transform:translateY(-10px);
 }
 
 .card img{
   width:100%;
-  height:200px;
+  height:180px;
   object-fit:cover;
 }
 
 .overlay{
-  position:absolute;
-  bottom:0;
-  width:100%;
-  background:rgba(0,0,0,0.7);
   padding:20px;
+  font-weight:bold;
 }
 
 /* POPUP */
@@ -130,7 +112,7 @@ body{
   position:fixed;
   width:100%;
   height:100%;
-  background:rgba(0,0,0,0.9);
+  background:rgba(0,0,0,0.7);
   top:0;
   left:0;
   justify-content:center;
@@ -138,10 +120,10 @@ body{
 }
 
 .popup-content{
-  background:#111;
+  background:white;
+  color:black;
   padding:40px;
   border-radius:20px;
-  text-align:center;
   width:300px;
 }
 
@@ -159,15 +141,16 @@ body{
   background:#25D366;
   padding:15px;
   border-radius:50%;
+  color:white;
 }
 </style>
 
 <script>
 function openPopup(id){
-document.getElementById(id).style.display="flex";
+  document.getElementById(id).style.display="flex";
 }
 function closePopup(id){
-document.getElementById(id).style.display="none";
+  document.getElementById(id).style.display="none";
 }
 </script>
 
@@ -184,11 +167,11 @@ document.getElementById(id).style.display="none";
     </div>
 
     <div class="subtitle">
-      Esthétique automobile haut de gamme • Saint-Céré
+      Esthétique automobile premium • Saint-Céré
     </div>
 
     <div class="tagline">
-      Une finition qui attire le regard. Une présence qui marque.
+      Une voiture propre attire toujours les regards
     </div>
 
     <a href="#contact" class="btn">Réserver</a>
@@ -224,7 +207,7 @@ document.getElementById(id).style.display="none";
 <div class="popup" id="interieur">
 <div class="popup-content">
 <h3>Intérieur</h3>
-<p>Lavage classique</p>
+<p>Lavage complet</p>
 <p>Shampouinage sièges</p>
 <p>Traitement vapeur</p>
 <div class="close" onclick="closePopup('interieur')">Fermer</div>
@@ -257,11 +240,11 @@ document.getElementById(id).style.display="none";
 <p>06 62 55 06 81</p>
 
 <a href="https://wa.me/33662550681" class="btn">
-Contacter via WhatsApp
+WhatsApp
 </a>
 </div>
 
-<a href="https://wa.me/33662550681" class="whatsapp"></a>
+<a href="https://wa.me/33662550681" class="whatsapp">💬</a>
 
 </body>
 </html>
