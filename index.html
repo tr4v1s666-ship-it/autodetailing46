@@ -1,16 +1,13 @@
-html id="autodetailing46-jdm-full"
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>AutoDetailing46 | Garage Premium</title>
+<title>AutoDetailing46 | Tokyo Garage Experience</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
-
-<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
 
@@ -19,2118 +16,951 @@ RESET
 ========================= */
 
 *{
-margin:0;
-padding:0;
-box-sizing:border-box;
-scroll-behavior:smooth;
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    scroll-behavior:smooth;
 }
 
 body{
-
-font-family:'Poppins',sans-serif;
-color:white;
-overflow-x:hidden;
-
-/* BACKGROUND */
-
-background:
-
-linear-gradient(
-rgba(0,0,0,0.72),
-rgba(0,0,0,0.90)
-),
-
-url("https://images.unsplash.com/photo-1544636331-e26879cd4d9b?q=80&w=1920&auto=format&fit=crop");
-
-background-size:cover;
-background-position:center;
-background-attachment:fixed;
-
+    font-family:'Poppins',sans-serif;
+    color:white;
+    overflow-x:hidden;
+    background:#050505;
+    position:relative;
 }
 
 /* =========================
-ANIMATED LIGHTS
+ANIMATED JAPANESE BACKGROUND
 ========================= */
 
 body::before{
-content:"";
-position:fixed;
-width:500px;
-height:500px;
-background:radial-gradient(circle,#ff000055,transparent 70%);
-top:-100px;
-right:-100px;
-filter:blur(50px);
-animation:moveLight 10s infinite alternate;
-z-index:-1;
+    content:"";
+    position:fixed;
+    inset:0;
+
+    background:
+    linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.88)),
+    url("https://images.unsplash.com/photo-1544636331-e26879cd4d9b?q=80&w=2200&auto=format&fit=crop");
+
+    background-size:cover;
+    background-position:center;
+    transform:scale(1.08);
+    animation:bgMove 18s ease-in-out infinite alternate;
+    z-index:-5;
 }
 
-@keyframes moveLight{
-
-from{
-transform:translate(0,0);
-}
-
-to{
-transform:translate(-120px,60px);
-}
-
-}
-
-/* =========================
-NAVBAR
-========================= */
-
-nav{
-
-position:fixed;
-top:0;
-left:0;
-width:100%;
-padding:22px 8%;
-
-display:flex;
-justify-content:space-between;
-align-items:center;
-
-background:rgba(0,0,0,0.35);
-
-backdrop-filter:blur(12px);
-
-border-bottom:1px solid rgba(255,255,255,0.05);
-
-z-index:1000;
-
-}
-
-.logo{
-
-font-family:'Orbitron',sans-serif;
-font-size:30px;
-font-weight:900;
-letter-spacing:3px;
-
-}
-
-.logo span{
-
-color:#ff1e1e;
-
-text-shadow:
-0 0 10px #ff1e1e,
-0 0 30px #ff1e1e,
-0 0 70px #ff1e1e;
-
-}
-
-.nav-links a{
-
-text-decoration:none;
-color:white;
-margin-left:30px;
-transition:0.3s;
-
-}
-
-.nav-links a:hover{
-
-color:#ff1e1e;
-
+@keyframes bgMove{
+    from{
+        transform:scale(1.08) translateY(0px);
+    }
+    to{
+        transform:scale(1.15) translateY(-20px);
+    }
 }
 
 /* =========================
-HERO
+TOKYO LIGHTS
 ========================= */
 
-.hero{
-
-height:100vh;
-
-display:flex;
-justify-content:center;
-align-items:center;
-text-align:center;
-
-padding:20px;
-
+.lights{
+    position:fixed;
+    inset:0;
+    pointer-events:none;
+    z-index:-3;
+    overflow:hidden;
 }
-
-.hero-box{
-
-max-width:900px;
-
-padding:60px;
-
-border-radius:35px;
-
-background:rgba(255,255,255,0.06);
-
-backdrop-filter:blur(14px);
-
-border:1px solid rgba(255,255,255,0.08);
-
-box-shadow:
-0 0 30px rgba(255,0,0,0.15);
-
-animation:fadeUp 1.2s ease;
-
-}
-
-.main-title{
-
-font-family:'Orbitron',sans-serif;
-
-font-size:95px;
-
-line-height:0.95;
-
-text-transform:uppercase;
-
-letter-spacing:4px;
-
-margin-bottom:25px;
-
-}
-
-.main-title span{
-
-display:block;
-
-color:#ff1e1e;
-
-text-shadow:
-0 0 10px #ff1e1e,
-0 0 30px #ff1e1e,
-0 0 60px #ff1e1e,
-0 0 120px rgba(255,0,0,0.5);
-
-animation:neonPulse 2.5s infinite alternate;
-
-}
-
-@keyframes neonPulse{
-
-from{
-
-text-shadow:
-0 0 10px #ff1e1e,
-0 0 30px #ff1e1e,
-0 0 60px #ff1e1e;
-
-}
-
-to{
-
-text-shadow:
-0 0 20px #ff1e1e,
-0 0 50px #ff1e1e,
-0 0 90px #ff1e1e,
-0 0 150px rgba(255,0,0,0.9);
-
-}
-
-}
-
-.subtitle{
-
-font-size:22px;
-color:#d5d5d5;
-margin-bottom:20px;
-
-}
-
-.tagline{
-
-color:#b3b3b3;
-line-height:1.8;
-margin-bottom:40px;
-
-}
-
-/* =========================
-BUTTON
-========================= */
-
-.btn{
-
-display:inline-block;
-
-padding:17px 42px;
-
-border-radius:50px;
-
-background:linear-gradient(90deg,#ff0000,#6d0000);
-
-color:white;
-
-text-decoration:none;
-
-font-weight:600;
-
-transition:0.35s;
-
-box-shadow:
-0 0 20px rgba(255,0,0,0.4),
-0 0 40px rgba(255,0,0,0.15);
-
-}
-
-.btn:hover{
-
-transform:translateY(-5px) scale(1.03);
-
-box-shadow:
-0 0 30px #ff0000,
-0 0 70px rgba(255,0,0,0.5);
-
-}
-
-/* =========================
-SECTION
-========================= */
-
-.section{
-
-padding:110px 8%;
-
-}
-
-.section-title{
-
-text-align:center;
-margin-bottom:70px;
-
-}
-
-.section-title h2{
-
-font-family:'Orbitron',sans-serif;
-font-size:46px;
-margin-bottom:15px;
-
-}
-
-.neon-line{
-
-width:140px;
-height:4px;
-
-margin:auto;
-
-background:#ff1e1e;
-
-border-radius:50px;
-
-box-shadow:
-0 0 15px #ff1e1e,
-0 0 30px #ff1e1e;
-
-}
-
-.section-title p{
-
-margin-top:20px;
-color:#a0a0a0;
-
-}
-
-/* =========================
-SERVICES
-========================= */
-
-.grid{
-
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-gap:35px;
-
-}
-
-.card{
-
-border-radius:30px;
-
-overflow:hidden;
-
-background:rgba(255,255,255,0.06);
-
-backdrop-filter:blur(14px);
-
-border:1px solid rgba(255,255,255,0.08);
-
-transition:0.4s;
-
-}
-
-.card:hover{
-
-transform:translateY(-12px);
-
-box-shadow:
-0 0 35px rgba(255,0,0,0.25),
-0 0 80px rgba(255,0,0,0.12);
-
-}
-
-.card img{
-
-width:100%;
-height:240px;
-object-fit:cover;
-
-}
-
-.card-content{
-
-padding:25px;
-
-}
-
-.card h3{
-
-font-size:24px;
-margin-bottom:15px;
-
-}
-
-.card p{
-
-line-height:1.7;
-color:#c0c0c0;
-margin-bottom:20px;
-
-}
-
-.price{
-
-font-size:22px;
-font-weight:600;
-color:#ff1e1e;
-
-}
-
-/* =========================
-TARIFS
-========================= */
-
-.tarifs{
-
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-gap:30px;
-
-}
-
-.tarif-box{
-
-padding:45px;
-
-text-align:center;
-
-border-radius:30px;
-
-background:rgba(255,255,255,0.06);
-
-backdrop-filter:blur(14px);
-
-border:1px solid rgba(255,255,255,0.08);
-
-transition:0.4s;
-
-}
-
-.tarif-box:hover{
-
-transform:scale(1.04);
-
-box-shadow:
-0 0 30px rgba(255,0,0,0.2);
-
-}
-
-.tarif-box h3{
-
-font-size:28px;
-margin-bottom:20px;
-
-}
-
-.tarif{
-
-font-size:48px;
-font-weight:bold;
-color:#ff1e1e;
-margin-bottom:20px;
-
-}
-
-/* =========================
-GALERIE
-========================= */
-
-.gallery{
-
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
-gap:25px;
-
-}
-
-.gallery img{
-
-width:100%;
-height:260px;
-
-object-fit:cover;
-
-border-radius:25px;
-
-transition:0.4s;
-
-}
-
-.gallery img:hover{
-
-transform:scale(1.03);
-
-box-shadow:
-0 0 25px rgba(255,0,0,0.25);
-
-}
-
-/* =========================
-CONTACT
-========================= */
-
-.contact-box{
-
-max-width:850px;
-
-margin:auto;
-
-padding:60px;
-
-border-radius:35px;
-
-background:rgba(255,255,255,0.06);
-
-backdrop-filter:blur(14px);
-
-border:1px solid rgba(255,255,255,0.08);
-
-}
-
-form{
-
-display:flex;
-flex-direction:column;
-gap:20px;
-margin-top:35px;
-
-}
-
-input,
-textarea{
-
-padding:18px;
-
-border:none;
-
-border-radius:16px;
-
-background:rgba(255,255,255,0.08);
-
-color:white;
-
-font-size:16px;
-
-outline:none;
-
-}
-
-textarea{
-
-height:160px;
-resize:none;
-
-}
-
-/* =========================
-SOCIALS
-========================= */
-
-.socials{
-
-display:flex;
-justify-content:center;
-gap:20px;
-margin-top:35px;
-
-}
-
-.socials a{
-
-width:60px;
-height:60px;
-
-border-radius:50%;
-
-display:flex;
-justify-content:center;
-align-items:center;
-
-background:rgba(255,255,255,0.08);
-
-text-decoration:none;
-
-font-size:26px;
-
-color:white;
-
-transition:0.3s;
-
-}
-
-.socials a:hover{
-
-background:#ff1e1e;
-
-box-shadow:
-0 0 20px #ff1e1e,
-0 0 40px rgba(255,0,0,0.5);
-
-}
-
-/* =========================
-WHATSAPP
-========================= */
-
-.whatsapp{
-
-position:fixed;
-
-bottom:25px;
-right:25px;
-
-width:70px;
-height:70px;
-
-border-radius:50%;
-
-background:#25D366;
-
-display:flex;
-justify-content:center;
-align-items:center;
-
-font-size:34px;
-
-color:white;
-
-text-decoration:none;
-
-box-shadow:
-0 0 25px rgba(37,211,102,0.7);
-
-z-index:1000;
-
-}
-
-/* =========================
-ANIMATIONS
-========================= */
-
-.fade{
-
-opacity:0;
-transform:translateY(50px);
-transition:1s;
-
-}
-
-.fade.show{
-
-opacity:1;
-transform:translateY(0);
-
-}
-
-@keyframes fadeUp{
-
-from{
-
-opacity:0;
-transform:translateY(40px);
-
-}
-
-to{
-
-opacity:1;
-transform:translateY(0);
-
-}
-
-}
-
-/* =========================
-FOOTER
-========================= */
-
-footer{
-
-padding:35px;
-text-align:center;
-color:#999;
-
-}
-
-/* =========================
-RESPONSIVE
-========================= */
-
-@media(max-width:768px){
-
-.main-title{
-
-font-size:58px;
-
-}
-
-.hero-box{
-
-padding:35px;
-
-}
-
-.section-title h2{
-
-font-size:34px;
-
-}
-
-nav{
-
-padding:18px 5%;
-
-}
-
-.nav-links a{
-
-margin-left:14px;
-font-size:14px;
-
-}
-
-}
-
-</style>
-</head>
-
-<body>
-
-<!-- NAVBAR -->
-
-<nav>
-
-<div class="logo">
-AUTO<span>DETAILING46</span>
-</div>
-
-<div class="nav-links">
-
-<a href="#services">Prestations</a>
-<a href="#tarifs">Tarifs</a>
-<a href="#galerie">Galerie</a>
-<a href="#contact">Contact</a>
-
-</div>
-
-</nav>
-
-<!-- HERO -->
-
-<section class="hero">
-
-<div class="hero-box">
-
-<h1 class="main-title">
-AUTO
-<span>DETAILING46</span>
-</h1>
-
-<div class="subtitle">
-Esthétique automobile premium • Garage japonais de nuit
-</div>
-
-<div class="tagline">
-Detailing haut de gamme • Finition miroir • Nettoyage intérieur • Polissage premium • Ambiance Tokyo underground.
-</div>
-
-<a href="#contact" class="btn">
-RÉSERVER MAINTENANT
-</a>
-
-</div>
-
-</section>
-
-<!-- SERVICES -->
-
-<section class="section fade" id="services">
-
-<div class="section-title">
-
-<h2>PRESTATIONS</h2>
-
-<div class="neon-line"></div>
-
-<p>
-Des finitions premium pour sublimer votre véhicule.
-</p>
-
-</div>
-
-<div class="grid">
-
-<div class="card">
-
-<img src="https://images.unsplash.com/photo-1607863680198-23d4b2565df0?q=80&w=1200">
-
-<div class="card-content">
-
-<h3>Nettoyage intérieur</h3>
-
-<p>
-Aspiration complète • Vapeur • Plastiques • Finition premium
-</p>
-
-<div class="price">
-49€
-</div>
-
-</div>
-
-</div>
-
-<div class="card">
-
-<img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?q=80&w=1200">
-
-<div class="card-content">
-
-<h3>Lavage extérieur</h3>
-
-<p>
-Mousse active • Jantes • Brillance showroom
-</p>
-
-<div class="price">
-39€
-</div>
-
-</div>
-
-</div>
-
-<div class="card">
-
-<img src="https://images.unsplash.com/photo-1511919884226-fd3cad34687c?q=80&w=1200">
-
-<div class="card-content">
-
-<h3>Polissage miroir</h3>
-
-<p>
-Correction rayures • Effet miroir • Rendu premium
-</p>
-
-<div class="price">
-Sur devis
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- TARIFS -->
-
-<section class="section fade" id="tarifs">
-
-<div class="section-title">
-
-<h2>TARIFS</h2>
-
-<div class="neon-line"></div>
-
-</div>
-
-<div class="tarifs">
-
-<div class="tarif-box">
-
-<h3>BASIC</h3>
-
-<div class="tarif">
-39€
-</div>
-
-<p>
-Lavage extérieur premium
-</p>
-
-</div>
-
-<div class="tarif-box">
-
-<h3>PREMIUM</h3>
-
-<div class="tarif">
-79€
-</div>
-
-<p>
-Intérieur + extérieur complet
-</p>
-
-</div>
-
-<div class="tarif-box">
-
-<h3>SHOWROOM</h3>
-
-<div class="tarif">
-149€
-</div>
-
-<p>
-Polissage miroir + finition luxe
-</p>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- GALERIE -->
-
-<section class="section fade" id="galerie">
-
-<div class="section-title">
-
-<h2>GALERIE</h2>
-
-<div class="neon-line"></div>
-
-</div>
-
-<div class="gallery">
-
-<img src="https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?q=80&w=1200">
-
-<img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?q=80&w=1200">
-
-<img src="https://images.unsplash.com/photo-1511919884226-fd3cad34687c?q=80&w=1200">
-
-</div>
-
-</section>
-
-<!-- CONTACT -->
-
-<section class="section fade" id="contact">
-
-<div class="contact-box">
-
-<div class="section-title">
-
-<h2>CONTACT</h2>
-
-<div class="neon-line"></div>
-
-</div>
-
-<form action="mailto:tonmail@gmail.com" method="POST" enctype="text/plain">
-
-<input type="text" placeholder="Nom" required>
-
-<input type="email" placeholder="Email" required>
-
-<input type="tel" placeholder="Téléphone">
-
-<textarea placeholder="Votre demande"></textarea>
-
-<button class="btn">
-ENVOYER
-</button>
-
-</form>
-
-<div class="socials">
-
-<a href="#">
-📸
-</a>
-
-<a href="#">
-📘
-</a>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- WHATSAPP -->
-
-<a href="https://wa.me/33662550681" class="whatsapp">
-💬
-</a>
-
-<!-- FOOTER -->
-
-<footer>
-© 2026 AutoDetailing46 • Premium Garage Experience
-</footer>
-
-<!-- ANIMATION SCRIPT -->
-
-<script>
-
-const fades = document.querySelectorAll('.fade');
-
-window.addEventListener('scroll',()=>{
-
-fades.forEach(fade=>{
-
-const top = fade.getBoundingClientRect().top;
-
-if(top < window.innerHeight - 100){
-
-fade.classList.add('show');
-
-}
-
-});
-
-});
-
-</script>
-
-</body>
-</html>
-
-
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>AutoDetailing46 | Garage Premium</title>
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-
-<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
-
-<style>
-
-/* =========================
-RESET
-========================= */
-
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-scroll-behavior:smooth;
-}
-
-body{
-
-font-family:'Poppins',sans-serif;
-color:white;
-overflow-x:hidden;
-
-/* BACKGROUND */
-
-background:
-
-linear-gradient(
-rgba(0,0,0,0.72),
-rgba(0,0,0,0.90)
-),
-
-url("https://images.unsplash.com/photo-1544636331-e26879cd4d9b?q=80&w=1920&auto=format&fit=crop");
-
-background-size:cover;
-background-position:center;
-background-attachment:fixed;
-
-}
-
-/* =========================
-ANIMATED LIGHTS
-========================= */
-
-body::before{
-content:"";
-position:fixed;
-width:500px;
-height:500px;
-background:radial-gradient(circle,#ff000055,transparent 70%);
-top:-100px;
-right:-100px;
-filter:blur(50px);
-animation:moveLight 10s infinite alternate;
-z-index:-1;
-}
-
-@keyframes moveLight{
-
-from{
-transform:translate(0,0);
-}
-
-to{
-transform:translate(-120px,60px);
-}
-
-}
-
-/* =========================
-NAVBAR
-========================= */
-
-nav{
-
-position:fixed;
-top:0;
-left:0;
-width:100%;
-padding:22px 8%;
-
-display:flex;
-justify-content:space-between;
-align-items:center;
-
-background:rgba(0,0,0,0.35);
-
-backdrop-filter:blur(12px);
-
-border-bottom:1px solid rgba(255,255,255,0.05);
-
-z-index:1000;
-
-}
-
-.logo{
-
-font-family:'Orbitron',sans-serif;
-font-size:30px;
-font-weight:900;
-letter-spacing:3px;
-
-}
-
-.logo span{
-
-color:#ff1e1e;
-
-text-shadow:
-0 0 10px #ff1e1e,
-0 0 30px #ff1e1e,
-0 0 70px #ff1e1e;
-
-}
-
-.nav-links a{
-
-text-decoration:none;
-color:white;
-margin-left:30px;
-transition:0.3s;
-
-}
-
-.nav-links a:hover{
-
-color:#ff1e1e;
-
-}
-
-/* =========================
-HERO
-========================= */
-
-.hero{
-
-height:100vh;
-
-display:flex;
-justify-content:center;
-align-items:center;
-text-align:center;
-
-padding:20px;
-
-}
-
-.hero-box{
-
-max-width:900px;
-
-padding:60px;
-
-border-radius:35px;
-
-background:rgba(255,255,255,0.06);
-
-backdrop-filter:blur(14px);
-
-border:1px solid rgba(255,255,255,0.08);
-
-box-shadow:
-0 0 30px rgba(255,0,0,0.15);
-
-animation:fadeUp 1.2s ease;
-
-}
-
-.main-title{
-
-font-family:'Orbitron',sans-serif;
-
-font-size:95px;
-
-line-height:0.95;
-
-text-transform:uppercase;
-
-letter-spacing:4px;
-
-margin-bottom:25px;
-
-}
-
-.main-title span{
-
-display:block;
-
-color:#ff1e1e;
-
-text-shadow:
-0 0 10px #ff1e1e,
-0 0 30px #ff1e1e,
-0 0 60px #ff1e1e,
-0 0 120px rgba(255,0,0,0.5);
-
-animation:neonPulse 2.5s infinite alternate;
-
-}
-
-@keyframes neonPulse{
-
-from{
-
-text-shadow:
-0 0 10px #ff1e1e,
-0 0 30px #ff1e1e,
-0 0 60px #ff1e1e;
-
-}
-
-to{
-
-text-shadow:
-0 0 20px #ff1e1e,
-0 0 50px #ff1e1e,
-0 0 90px #ff1e1e,
-0 0 150px rgba(255,0,0,0.9);
-
-}
-
-}
-
-.subtitle{
-
-font-size:22px;
-color:#d5d5d5;
-margin-bottom:20px;
-
-}
-
-.tagline{
-
-color:#b3b3b3;
-line-height:1.8;
-margin-bottom:40px;
-
-}
-
-/* =========================
-BUTTON
-========================= */
-
-.btn{
-
-display:inline-block;
-
-padding:17px 42px;
-
-border-radius:50px;
-
-background:linear-gradient(90deg,#ff0000,#6d0000);
-
-color:white;
-
-text-decoration:none;
-
-font-weight:600;
-
-transition:0.35s;
-
-box-shadow:
-0 0 20px rgba(255,0,0,0.4),
-0 0 40px rgba(255,0,0,0.15);
-
-}
-
-.btn:hover{
-
-transform:translateY(-5px) scale(1.03);
-
-box-shadow:
-0 0 30px #ff0000,
-0 0 70px rgba(255,0,0,0.5);
-
-}
-
-/* =========================
-SECTION
-========================= */
-
-.section{
-
-padding:110px 8%;
-
-}
-
-.section-title{
-
-text-align:center;
-margin-bottom:70px;
-
-}
-
-.section-title h2{
-
-font-family:'Orbitron',sans-serif;
-font-size:46px;
-margin-bottom:15px;
-
-}
-
-.neon-line{
-
-width:140px;
-height:4px;
-
-margin:auto;
-
-background:#ff1e1e;
-
-border-radius:50px;
-
-box-shadow:
-0 0 15px #ff1e1e,
-0 0 30px #ff1e1e;
-
-}
-
-.section-title p{
-
-margin-top:20px;
-color:#a0a0a0;
-
-}
-
-/* =========================
-SERVICES
-========================= */
-
-.grid{
-
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-gap:35px;
-
-}
-
-.card{
-
-border-radius:30px;
-
-overflow:hidden;
-
-background:rgba(255,255,255,0.06);
-
-backdrop-filter:blur(14px);
-
-border:1px solid rgba(255,255,255,0.08);
-
-transition:0.4s;
-
-}
-
-.card:hover{
-
-transform:translateY(-12px);
-
-box-shadow:
-0 0 35px rgba(255,0,0,0.25),
-0 0 80px rgba(255,0,0,0.12);
-
-}
-
-.card img{
-
-width:100%;
-height:240px;
-object-fit:cover;
-
-}
-
-.card-content{
-
-padding:25px;
-
-}
-
-.card h3{
-
-font-size:24px;
-margin-bottom:15px;
-
-}
-
-.card p{
-
-line-height:1.7;
-color:#c0c0c0;
-margin-bottom:20px;
-
-}
-
-.price{
-
-font-size:22px;
-font-weight:600;
-color:#ff1e1e;
-
-}
-
-/* =========================
-TARIFS
-========================= */
-
-.tarifs{
-
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-gap:30px;
-
-}
-
-.tarif-box{
-
-padding:45px;
-
-text-align:center;
-
-border-radius:30px;
-
-background:rgba(255,255,255,0.06);
-
-backdrop-filter:blur(14px);
-
-border:1px solid rgba(255,255,255,0.08);
-
-transition:0.4s;
-
-}
-
-.tarif-box:hover{
-
-transform:scale(1.04);
-
-box-shadow:
-0 0 30px rgba(255,0,0,0.2);
-
-}
-
-.tarif-box h3{
-
-font-size:28px;
-margin-bottom:20px;
-
-}
-
-.tarif{
-
-font-size:48px;
-font-weight:bold;
-color:#ff1e1e;
-margin-bottom:20px;
-
-}
-
-/* =========================
-GALERIE
-========================= */
-
-.gallery{
-
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
-gap:25px;
-
-}
-
-.gallery img{
-
-width:100%;
-height:260px;
-
-object-fit:cover;
-
-border-radius:25px;
-
-transition:0.4s;
-
-}
-
-.gallery img:hover{
-
-transform:scale(1.03);
-
-box-shadow:
-0 0 25px rgba(255,0,0,0.25);
-
-}
-
-/* =========================
-CONTACT
-========================= */
-
-.contact-box{
-
-max-width:850px;
-
-margin:auto;
-
-padding:60px;
-
-border-radius:35px;
-
-background:rgba(255,255,255,0.06);
-
-backdrop-filter:blur(14px);
-
-border:1px solid rgba(255,255,255,0.08);
-
-}
-
-form{
-
-display:flex;
-flex-direction:column;
-gap:20px;
-margin-top:35px;
-
-}
-
-input,
-textarea{
-
-padding:18px;
-
-border:none;
-
-border-radius:16px;
-
-background:rgba(255,255,255,0.08);
-
-color:white;
-
-font-size:16px;
-
-outline:none;
-
-}
-
-textarea{
-
-height:160px;
-resize:none;
-
-}
-
-/* =========================
-SOCIALS
-========================= */
-
-.socials{
-
-display:flex;
-justify-content:center;
-gap:20px;
-margin-top:35px;
-
-}
-
-.socials a{
-
-width:60px;
-height:60px;
-
-border-radius:50%;
-
-display:flex;
-justify-content:center;
-align-items:center;
-
-background:rgba(255,255,255,0.08);
-
-text-decoration:none;
-
-font-size:26px;
-
-color:white;
-
-transition:0.3s;
-
-}
-
-.socials a:hover{
-
-background:#ff1e1e;
-
-box-shadow:
-0 0 20px #ff1e1e,
-0 0 40px rgba(255,0,0,0.5);
-
-}
-
-/* =========================
-WHATSAPP
-========================= */
-
-.whatsapp{
-
-position:fixed;
-
-bottom:25px;
-right:25px;
-
-width:70px;
-height:70px;
-
-border-radius:50%;
-
-background:#25D366;
-
-display:flex;
-justify-content:center;
-align-items:center;
-
-font-size:34px;
-
-color:white;
-
-text-decoration:none;
-
-box-shadow:
-0 0 25px rgba(37,211,102,0.7);
-
-z-index:1000;
-
-}
-
-/* =========================
-ANIMATIONS
-========================= */
-
-.fade{
-
-opacity:0;
-transform:translateY(50px);
-transition:1s;
-
-}
-
-.fade.show{
-
-opacity:1;
-transform:translateY(0);
-
-}
-
-@keyframes fadeUp{
-
-from{
-
-opacity:0;
-transform:translateY(40px);
-
-}
-
-to{
-
-opacity:1;
-transform:translateY(0);
-
-}
-
-}
-
-/* =========================
-FOOTER
-========================= */
-
-footer{
-
-padding:35px;
-text-align:center;
-color:#999;
-
-}
-
-/* =========================
-RESPONSIVE
-========================= */
-
-@media(max-width:768px){
-
-.main-title{
-
-font-size:58px;
-
-}
-
-.hero-box{
-
-padding:35px;
-
-}
-
-.section-title h2{
-
-font-size:34px;
-
-}
-
-nav{
-
-padding:18px 5%;
-
-}
-
-.nav-links a{
-
-margin-left:14px;
-font-size:14px;
-
-}
-
-}
-
-</style>
-</head>
-
-<body>
-
-<!-- NAVBAR -->
-
-<nav>
-
-<div class="logo">
-AUTO<span>DETAILING46</span>
-</div>
-
-<div class="nav-links">
-
-<a href="#services">Prestations</a>
-<a href="#tarifs">Tarifs</a>
-<a href="#galerie">Galerie</a>
-<a href="#contact">Contact</a>
-
-</div>
-
-</nav>
-
-<!-- HERO -->
-
-<section class="hero">
-
-<div class="hero-box">
-
-<h1 class="main-title">
-AUTO
-<span>DETAILING46</span>
-</h1>
-
-<div class="subtitle">
-Esthétique automobile premium • Garage japonais de nuit
-</div>
-
-<div class="tagline">
-Detailing haut de gamme • Finition miroir • Nettoyage intérieur • Polissage premium • Ambiance Tokyo underground.
-</div>
-
-<a href="#contact" class="btn">
-RÉSERVER MAINTENANT
-</a>
-
-</div>
-
-</section>
-
-<!-- SERVICES -->
-
-<section class="section fade" id="services">
-
-<div class="section-title">
-
-<h2>PRESTATIONS</h2>
-
-<div class="neon-line"></div>
-
-<p>
-Des finitions premium pour sublimer votre véhicule.
-</p>
-
-</div>
-
-<div class="grid">
-
-<div class="card">
-
-<img src="https://images.unsplash.com/photo-1607863680198-23d4b2565df0?q=80&w=1200">
-
-<div class="card-content">
-
-<h3>Nettoyage intérieur</h3>
-
-<p>
-Aspiration complète • Vapeur • Plastiques • Finition premium
-</p>
-
-<div class="price">
-49€
-</div>
-
-</div>
-
-</div>
-
-<div class="card">
-
-<img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?q=80&w=1200">
-
-<div class="card-content">
-
-<h3>Lavage extérieur</h3>
-
-<p>
-Mousse active • Jantes • Brillance showroom
-</p>
-
-<div class="price">
-39€
-</div>
-
-</div>
-
-</div>
-
-<div class="card">
-
-<img src="https://images.unsplash.com/photo-1511919884226-fd3cad34687c?q=80&w=1200">
-
-<div class="card-content">
-
-<h3>Polissage miroir</h3>
-
-<p>
-Correction rayures • Effet miroir • Rendu premium
-</p>
-
-<div class="price">
-Sur devis
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- TARIFS -->
-
-<section class="section fade" id="tarifs">
-
-<div class="section-title">
-
-<h2>TARIFS</h2>
-
-<div class="neon-line"></div>
-
-</div>
-
-<div class="tarifs">
-
-<div class="tarif-box">
-
-<h3>BASIC</h3>
-
-<div class="tarif">
-39€
-</div>
-
-<p>
-Lavage extérieur premium
-</p>
-
-</div>
-
-<div class="tarif-box">
-
-<h3>PREMIUM</h3>
-
-<div class="tarif">
-79€
-</div>
-
-<p>
-Intérieur + extérieur complet
-</p>
-
-</div>
-
-<div class="tarif-box">
-
-<h3>SHOWROOM</h3>
-
-<div class="tarif">
-149€
-</div>
-
-<p>
-Polissage miroir + finition luxe
-</p>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- GALERIE -->
-
-<section class="section fade" id="galerie">
-
-<div class="section-title">
-
-<h2>GALERIE</h2>
-
-<div class="neon-line"></div>
-
-</div>
-
-<div class="gallery">
-
-<img src="https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?q=80&w=1200">
-
-<img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?q=80&w=1200">
-
-<img src="https://images.unsplash.com/photo-1511919884226-fd3cad34687c?q=80&w=1200">
-
-</div>
-
-</section>
-
-<!-- CONTACT -->
-
-<section class="section fade" id="contact">
-
-<div class="contact-box">
-
-<div class="section-title">
-
-<h2>CONTACT</h2>
-
-<div class="neon-line"></div>
-
-</div>
-
-<form action="mailto:tonmail@gmail.com" method="POST" enctype="text/plain">
-
-<input type="text" placeholder="Nom" required>
-
-<input type="email" placeholder="Email" required>
-
-<input type="tel" placeholder="Téléphone">
-
-<textarea placeholder="Votre demande"></textarea>
-
-<button class="btn">
-ENVOYER
-</button>
-
-</form>
-
-<div class="socials">
-
-<a href="#">
-📸
-</a>
-
-<a href="#">
-📘
-</a>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- WHATSAPP -->
-
-<a href="https://wa.me/33662550681" class="whatsapp">
-💬
-</a>
-
-<!-- FOOTER -->
-
-<footer>
-© 2026 AutoDetailing46 • Premium Garage Experience
-</footer>
-
-<!-- ANIMATION SCRIPT -->
-
-<script>
-
-const fades = document.querySelectorAll('.fade');
-
-window.addEventListener('scroll',()=>{
-
-fades.forEach(fade=>{
-
-const top = fade.getBoundingClientRect().top;
-
-if(top < window.innerHeight - 100){
-
-fade.classList.add('show');
-
-}
-
-});
-
-});
-
-</script>
-
-</body>
-<html lang="fr">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AutoDetailing46 | Tokyo Underground</title>
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-
-<style>
-
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-scroll-behavior:smooth;
-}
-
-:root{
---red:#ff2020;
---dark:#050505;
---glass:rgba(255,255,255,0.07);
---border:rgba(255,255,255,0.08);
---text:#ffffff;
---gray:#bdbdbd;
-}
-
-body{
-font-family:'Poppins',sans-serif;
-background:#000;
-color:white;
-overflow-x:hidden;
-position:relative;
-}
-
-/* =========================
-BACKGROUND VIDEO
-========================= */
-
-.bg-video{
-position:fixed;
-top:0;
-left:0;
-width:100%;
-height:100%;
-object-fit:cover;
-z-index:-5;
-filter:brightness(0.22) contrast(1.1) saturate(1.1);
-}
-
-.overlay{
-position:fixed;
-inset:0;
-background:
-linear-gradient(rgba(0,0,0,0.65),rgba(0,0,0,0.92));
-z-index:-4;
-}
-
-/* =========================
-ANIMATED LIGHTS
-========================= */
 
 .light{
-position:fixed;
-border-radius:50%;
-filter:blur(80px);
-z-index:-3;
+    position:absolute;
+    border-radius:50%;
+    filter:blur(80px);
+    opacity:0.45;
 }
 
 .light.red{
-width:500px;
-height:500px;
-background:rgba(255,0,0,0.20);
-top:-120px;
-right:-120px;
-animation:floatRed 12s ease-in-out infinite alternate;
+    width:400px;
+    height:400px;
+    background:#ff0000;
+    top:-120px;
+    right:-100px;
+    animation:floatRed 12s infinite alternate ease-in-out;
 }
+
+.light.blue{
+    width:350px;
+    height:350px;
+    background:#0077ff;
+    bottom:-120px;
+    left:-100px;
+    animation:floatBlue 14s infinite alternate ease-in-out;
+}
+
+@keyframes floatRed{
+    from{
+        transform:translate(0,0);
+    }
+    to{
+        transform:translate(-120px,80px);
+    }
+}
+
+@keyframes floatBlue{
+    from{
+        transform:translate(0,0);
+    }
+    to{
+        transform:translate(120px,-60px);
+    }
+}
+
+/* =========================
+RAIN EFFECT
+========================= */
+
+.rain{
+    position:fixed;
+    inset:0;
+    z-index:-2;
+    overflow:hidden;
+    pointer-events:none;
+}
+
+.rain span{
+    position:absolute;
+    width:1px;
+    height:120px;
+    background:linear-gradient(transparent, rgba(255,255,255,0.4));
+    animation:rain linear infinite;
+}
+
+@keyframes rain{
+    from{
+        transform:translateY(-150px);
+    }
+    to{
+        transform:translateY(120vh);
+    }
+}
+
+/* =========================
+NAVBAR
+========================= */
+
+nav{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    padding:20px 7%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    background:rgba(0,0,0,0.35);
+    backdrop-filter:blur(14px);
+    border-bottom:1px solid rgba(255,255,255,0.08);
+    z-index:1000;
+}
+
+.logo{
+    font-family:'Orbitron',sans-serif;
+    font-size:32px;
+    font-weight:900;
+    letter-spacing:4px;
+}
+
+.logo span{
+    color:#ff2020;
+    text-shadow:
+    0 0 10px #ff0000,
+    0 0 25px #ff0000,
+    0 0 60px #ff0000;
+}
+
+.nav-links{
+    display:flex;
+    gap:28px;
+}
+
+.nav-links a{
+    text-decoration:none;
+    color:white;
+    font-weight:500;
+    transition:0.3s;
+    position:relative;
+}
+
+.nav-links a::after{
+    content:"";
+    position:absolute;
+    left:0;
+    bottom:-6px;
+    width:0%;
+    height:2px;
+    background:#ff1e1e;
+    transition:0.3s;
+}
+
+.nav-links a:hover::after{
+    width:100%;
+}
+
+.nav-links a:hover{
+    color:#ff1e1e;
+}
+
+/* =========================
+HERO
+========================= */
+
+.hero{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:140px 20px 80px;
+    position:relative;
+}
+
+.hero-box{
+    max-width:950px;
+    padding:70px;
+    border-radius:40px;
+
+    background:rgba(255,255,255,0.05);
+
+    backdrop-filter:blur(18px);
+
+    border:1px solid rgba(255,255,255,0.08);
+
+    box-shadow:
+    0 0 50px rgba(255,0,0,0.15),
+    inset 0 0 30px rgba(255,255,255,0.02);
+
+    animation:fadeUp 1.4s ease;
+}
+
+.japan-text{
+    color:#ff2a2a;
+    letter-spacing:8px;
+    font-size:14px;
+    margin-bottom:18px;
+    text-transform:uppercase;
+}
+
+.main-title{
+    font-family:'Orbitron',sans-serif;
+    font-size:100px;
+    line-height:0.95;
+    text-transform:uppercase;
+    margin-bottom:25px;
+}
+
+.main-title span{
+    display:block;
+    color:#ff2020;
+
+    text-shadow:
+    0 0 10px #ff0000,
+    0 0 25px #ff0000,
+    0 0 70px #ff0000,
+    0 0 120px rgba(255,0,0,0.5);
+
+    animation:neon 2s infinite alternate;
+}
+
+@keyframes neon{
+    from{
+        filter:brightness(1);
+    }
+    to{
+        filter:brightness(1.4);
+    }
+}
+
+.subtitle{
+    font-size:22px;
+    color:#d7d7d7;
+    margin-bottom:20px;
+}
+
+.tagline{
+    color:#a8a8a8;
+    line-height:1.9;
+    margin-bottom:40px;
+    font-size:17px;
+}
+
+/* =========================
+BUTTON
+========================= */
+
+.btn{
+    display:inline-block;
+    padding:18px 44px;
+    border-radius:60px;
+    text-decoration:none;
+    color:white;
+    font-weight:600;
+
+    background:linear-gradient(90deg,#ff0000,#850000);
+
+    box-shadow:
+    0 0 20px rgba(255,0,0,0.4),
+    0 0 50px rgba(255,0,0,0.15);
+
+    transition:0.35s;
+}
+
+.btn:hover{
+    transform:translateY(-6px) scale(1.03);
+
+    box-shadow:
+    0 0 30px #ff0000,
+    0 0 80px rgba(255,0,0,0.6);
+}
+
+/* =========================
+SECTION
+========================= */
+
+.section{
+    padding:120px 8%;
+    position:relative;
+}
+
+.section-title{
+    text-align:center;
+    margin-bottom:70px;
+}
+
+.section-title h2{
+    font-family:'Orbitron',sans-serif;
+    font-size:48px;
+    margin-bottom:18px;
+}
+
+.neon-line{
+    width:140px;
+    height:4px;
+    background:#ff1e1e;
+    margin:auto;
+    border-radius:30px;
+
+    box-shadow:
+    0 0 15px #ff1e1e,
+    0 0 35px #ff1e1e;
+}
+
+.section-title p{
+    margin-top:20px;
+    color:#a5a5a5;
+}
+
+/* =========================
+CARDS
+========================= */
+
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:35px;
+}
+
+.card{
+    border-radius:32px;
+    overflow:hidden;
+
+    background:rgba(255,255,255,0.05);
+
+    backdrop-filter:blur(16px);
+
+    border:1px solid rgba(255,255,255,0.08);
+
+    transition:0.45s;
+}
+
+.card:hover{
+    transform:translateY(-12px) rotateX(5deg);
+
+    box-shadow:
+    0 0 35px rgba(255,0,0,0.2),
+    0 0 90px rgba(255,0,0,0.1);
+}
+
+.card img{
+    width:100%;
+    height:240px;
+    object-fit:cover;
+    transition:0.5s;
+}
+
+.card:hover img{
+    transform:scale(1.08);
+}
+
+.card-content{
+    padding:28px;
+}
+
+.card h3{
+    font-size:24px;
+    margin-bottom:15px;
+}
+
+.card p{
+    color:#bdbdbd;
+    line-height:1.8;
+    margin-bottom:20px;
+}
+
+.price{
+    color:#ff1e1e;
+    font-size:24px;
+    font-weight:700;
+}
+
+/* =========================
+TARIFS
+========================= */
+
+.tarifs{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+    gap:30px;
+}
+
+.tarif-box{
+    padding:50px;
+    border-radius:35px;
+    text-align:center;
+
+    background:rgba(255,255,255,0.05);
+
+    backdrop-filter:blur(16px);
+
+    border:1px solid rgba(255,255,255,0.08);
+
+    transition:0.4s;
+}
+
+.tarif-box:hover{
+    transform:scale(1.05);
+
+    box-shadow:
+    0 0 30px rgba(255,0,0,0.2);
+}
+
+.tarif{
+    font-size:55px;
+    font-weight:bold;
+    color:#ff1e1e;
+    margin:20px 0;
+}
+
+/* =========================
+GALERIE
+========================= */
+
+.gallery{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+    gap:25px;
+}
+
+.gallery img{
+    width:100%;
+    height:280px;
+    object-fit:cover;
+    border-radius:30px;
+    transition:0.5s;
+}
+
+.gallery img:hover{
+    transform:scale(1.03);
+
+    box-shadow:
+    0 0 30px rgba(255,0,0,0.3);
+}
+
+/* =========================
+CONTACT
+========================= */
+
+.contact-box{
+    max-width:900px;
+    margin:auto;
+    padding:65px;
+    border-radius:40px;
+
+    background:rgba(255,255,255,0.05);
+
+    backdrop-filter:blur(18px);
+
+    border:1px solid rgba(255,255,255,0.08);
+}
+
+form{
+    display:flex;
+    flex-direction:column;
+    gap:20px;
+    margin-top:35px;
+}
+
+input,
+textarea{
+    padding:18px;
+    border:none;
+    border-radius:18px;
+
+    background:rgba(255,255,255,0.08);
+
+    color:white;
+    font-size:16px;
+    outline:none;
+}
+
+textarea{
+    height:160px;
+    resize:none;
+}
+
+/* =========================
+SOCIALS
+========================= */
+
+.socials{
+    display:flex;
+    justify-content:center;
+    gap:20px;
+    margin-top:35px;
+}
+
+.socials a{
+    width:60px;
+    height:60px;
+    border-radius:50%;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    background:rgba(255,255,255,0.08);
+
+    text-decoration:none;
+    font-size:26px;
+    color:white;
+
+    transition:0.3s;
+}
+
+.socials a:hover{
+    background:#ff1e1e;
+
+    box-shadow:
+    0 0 20px #ff1e1e,
+    0 0 50px rgba(255,0,0,0.5);
+}
+
+/* =========================
+WHATSAPP
+========================= */
+
+.whatsapp{
+    position:fixed;
+    bottom:25px;
+    right:25px;
+
+    width:72px;
+    height:72px;
+    border-radius:50%;
+
+    background:#25D366;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    text-decoration:none;
+
+    font-size:34px;
+    color:white;
+
+    z-index:999;
+
+    box-shadow:
+    0 0 25px rgba(37,211,102,0.7);
+}
+
+/* =========================
+ANIMATION
+========================= */
+
+.fade{
+    opacity:0;
+    transform:translateY(60px);
+    transition:1s;
+}
+
+.fade.show{
+    opacity:1;
+    transform:translateY(0);
+}
+
+@keyframes fadeUp{
+    from{
+        opacity:0;
+        transform:translateY(40px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+/* =========================
+FOOTER
+========================= */
+
+footer{
+    padding:35px;
+    text-align:center;
+    color:#9f9f9f;
+}
+
+/* =========================
+RESPONSIVE
+========================= */
+
+@media(max-width:900px){
+
+    .main-title{
+        font-size:62px;
+    }
+
+    .hero-box{
+        padding:40px;
+    }
+
+}
+
+@media(max-width:768px){
+
+    nav{
+        padding:18px 5%;
+        flex-direction:column;
+        gap:15px;
+    }
+
+    .nav-links{
+        gap:18px;
+        flex-wrap:wrap;
+        justify-content:center;
+    }
+
+    .section-title h2{
+        font-size:36px;
+    }
+
+    .contact-box{
+        padding:35px;
+    }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- LIGHTS -->
+<div class="lights">
+    <div class="light red"></div>
+    <div class="light blue"></div>
+</div>
+
+<!-- RAIN -->
+<div class="rain" id="rain"></div>
+
+<!-- NAVBAR -->
+<nav>
+
+    <div class="logo">
+        AUTO<span>DETAILING46</span>
+    </div>
+
+    <div class="nav-links">
+        <a href="#services">Prestations</a>
+        <a href="#tarifs">Tarifs</a>
+        <a href="#galerie">Galerie</a>
+        <a href="#contact">Contact</a>
+    </div>
+
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+
+    <div class="hero-box">
+
+        <div class="japan-text">
+            TOKYO UNDERGROUND GARAGE
+        </div>
+
+        <h1 class="main-title">
+            AUTO
+            <span>DETAILING46</span>
+        </h1>
+
+        <div class="subtitle">
+            Esthétique automobile premium • Style japonais immersif
+        </div>
+
+        <div class="tagline">
+            Detailing haut de gamme • Effet miroir • Nettoyage premium •
+            Ambiance Tokyo Night • Expérience garage JDM immersive.
+        </div>
+
+        <a href="#contact" class="btn">
+            RÉSERVER MAINTENANT
+        </a>
+
+    </div>
+
+</section>
+
+<!-- SERVICES -->
+<section class="section fade" id="services">
+
+    <div class="section-title">
+        <h2>PRESTATIONS</h2>
+        <div class="neon-line"></div>
+        <p>
+            Des finitions premium inspirées des garages japonais.
+        </p>
+    </div>
+
+    <div class="grid">
+
+        <div class="card">
+
+            <img src="https://images.unsplash.com/photo-1607863680198-23d4b2565df0?q=80&w=1200">
+
+            <div class="card-content">
+
+                <h3>Nettoyage intérieur</h3>
+
+                <p>
+                    Aspiration complète • Vapeur • Plastiques •
+                    Finition showroom premium.
+                </p>
+
+                <div class="price">
+                    49€
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="card">
+
+            <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?q=80&w=1200">
+
+            <div class="card-content">
+
+                <h3>Lavage extérieur</h3>
+
+                <p>
+                    Mousse active • Jantes • Brillance miroir •
+                    Effet wet look.
+                </p>
+
+                <div class="price">
+                    39€
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="card">
+
+            <img src="https://images.unsplash.com/photo-1511919884226-fd3cad34687c?q=80&w=1200">
+
+            <div class="card-content">
+
+                <h3>Polissage miroir</h3>
+
+                <p>
+                    Correction rayures • Brillance intense •
+                    Rendu ultra premium.
+                </p>
+
+                <div class="price">
+                    Sur devis
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- TARIFS -->
+<section class="section fade" id="tarifs">
+
+    <div class="section-title">
+        <h2>TARIFS</h2>
+        <div class="neon-line"></div>
+    </div>
+
+    <div class="tarifs">
+
+        <div class="tarif-box">
+            <h3>BASIC</h3>
+            <div class="tarif">39€</div>
+            <p>Lavage extérieur premium</p>
+        </div>
+
+        <div class="tarif-box">
+            <h3>PREMIUM</h3>
+            <div class="tarif">79€</div>
+            <p>Intérieur + extérieur complet</p>
+        </div>
+
+        <div class="tarif-box">
+            <h3>SHOWROOM</h3>
+            <div class="tarif">149€</div>
+            <p>Polissage miroir + finition luxe</p>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- GALERIE -->
+<section class="section fade" id="galerie">
+
+    <div class="section-title">
+        <h2>GALERIE</h2>
+        <div class="neon-line"></div>
+    </div>
+
+    <div class="gallery">
+
+        <img src="https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?q=80&w=1200">
+
+        <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?q=80&w=1200">
+
+        <img src="https://images.unsplash.com/photo-1511919884226-fd3cad34687c?q=80&w=1200">
+
+    </div>
+
+</section>
+
+<!-- CONTACT -->
+<section class="section fade" id="contact">
+
+    <div class="contact-box">
+
+        <div class="section-title">
+            <h2>CONTACT</h2>
+            <div class="neon-line"></div>
+        </div>
+
+        <form>
+
+            <input type="text" placeholder="Nom" required>
+
+            <input type="email" placeholder="Email" required>
+
+            <input type="tel" placeholder="Téléphone">
+
+            <textarea placeholder="Votre demande"></textarea>
+
+            <button class="btn">
+                ENVOYER
+            </button>
+
+        </form>
+
+        <div class="socials">
+
+            <a href="#">📸</a>
+
+            <a href="#">📘</a>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- WHATSAPP -->
+<a href="https://wa.me/33662550681" class="whatsapp">
+💬
+</a>
+
+<!-- FOOTER -->
+<footer>
+© 2026 AutoDetailing46 • Tokyo Garage Experience
+</footer>
+
+<!-- JAVASCRIPT -->
+<script>
+
+/* =========================
+FADE ANIMATION
+========================= */
+
+const fades = document.querySelectorAll('.fade');
+
+window.addEventListener('scroll',()=>{
+
+    fades.forEach(fade=>{
+
+        const top = fade.getBoundingClientRect().top;
+
+        if(top < window.innerHeight - 100){
+            fade.classList.add('show');
+        }
+
+    });
+
+});
+
+/* =========================
+RAIN GENERATOR
+========================= */
+
+const rain = document.getElementById("rain");
+
+for(let i = 0; i < 90; i++){
+
+    const drop = document.createElement("span");
+
+    drop.style.left = Math.random() * window.innerWidth + "px";
+
+    drop.style.animationDuration =
+    (Math.random() * 1 + 0.5) + "s";
+
+    drop.style.opacity = Math.random();
+
+    drop.style.height =
+    (Math.random() * 100 + 60) + "px";
+
+    drop.style.animationDelay =
+    Math.random() * 5 + "s";
+
+    rain.appendChild(drop);
+
+}
+
+</script>
+
+</body>
 </html>
