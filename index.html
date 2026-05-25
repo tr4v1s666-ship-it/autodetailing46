@@ -1068,7 +1068,8 @@ VERY SMALL MOBILE
         </div>
 
         
-<form action="https://formsubmit.co/trav1s666@hotmail.fr" method="POST">
+
+<form id="contact-form">
 
     <input type="text" name="nom" placeholder="Nom" required>
 
@@ -1078,15 +1079,13 @@ VERY SMALL MOBILE
 
     <textarea name="message" placeholder="Votre demande"></textarea>
 
-    <!-- Options FormSubmit -->
-    <input type="hidden" name="_subject" value="Nouveau message AutoDetailing46">
-    <input type="hidden" name="_captcha" value="false">
-
     <button type="submit" class="btn">
         ENVOYER
     </button>
 
 </form>
+``
+
 
 
         <div class="socials">
@@ -1180,6 +1179,32 @@ for(let i = 0; i < 90; i++){
 
 }
 
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+
+<script>
+(function(){
+    emailjs.init("AGy8UYGdY6vqHTfx0");
+})();
+</script>
+
+<script>
+document.getElementById("contact-form").addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    emailjs.sendForm(
+        'service_lt7pny8',
+        'template_8ebt0li',
+        this
+    )
+    .then(function() {
+        alert("✅ Message envoyé !");
+    }, function(error) {
+        alert("❌ Erreur d'envoi");
+        console.log(error);
+    });
+});
 </script>
 
 </body>
