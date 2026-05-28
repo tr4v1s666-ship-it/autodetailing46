@@ -51,7 +51,7 @@ BACKGROUND
 
     background:
     linear-gradient(
-        rgba(0,0,0,0.55),
+        rgba(0,0,0,0.45),
         rgba(0,0,0,0.88)
     ),
     url("https://images.unsplash.com/photo-1544636331-e26879cd4d9b?q=80&w=2200&auto=format&fit=crop");
@@ -81,7 +81,7 @@ NEON LIGHTS
     position:absolute;
     border-radius:50%;
     filter:blur(120px);
-    opacity:0.45;
+    opacity:0.35;
 }
 
 .red{
@@ -178,7 +178,7 @@ nav{
 
     background:rgba(0,0,0,0.35);
 
-    backdrop-filter:blur(12px);
+    backdrop-filter:blur(14px);
 
     border-bottom:1px solid rgba(255,255,255,0.08);
 
@@ -186,20 +186,33 @@ nav{
 }
 
 .logo{
+    display:flex;
+    align-items:center;
+    gap:12px;
+
     font-family:'Orbitron',sans-serif;
-    font-size:30px;
+    font-size:26px;
     font-weight:900;
-    letter-spacing:3px;
+    letter-spacing:2px;
+}
+
+.logo img{
+    width:60px;
+    height:60px;
+    object-fit:contain;
+
+    filter:
+    drop-shadow(0 0 10px rgba(255,0,0,0.4))
+    drop-shadow(0 0 30px rgba(255,0,0,0.25));
 }
 
 .logo span{
-    color:#ff1e1e;
-
-    text-shadow:
-    0 0 10px #ff0000,
-    0 0 25px #ff0000,
-    0 0 60px #ff0000;
+    color:#ffffff;
 }
+
+/* =========================
+NAV LINKS
+========================= */
 
 .nav-links{
     display:flex;
@@ -254,7 +267,7 @@ HERO
 
 .hero-box{
 
-    max-width:950px;
+    max-width:1000px;
 
     padding:70px 55px;
 
@@ -280,34 +293,37 @@ HERO
     margin-bottom:18px;
 }
 
-.main-title{
-    font-family:'Orbitron',sans-serif;
-    font-size:95px;
-    line-height:0.95;
+.hero-logo{
+    display:flex;
+    justify-content:center;
+    align-items:center;
     margin-bottom:25px;
 }
 
-.main-title span{
-    display:block;
-    color:#ff1e1e;
+.hero-logo img{
+    width:480px;
+    max-width:100%;
+    object-fit:contain;
 
-    text-shadow:
-    0 0 10px #ff0000,
-    0 0 30px #ff0000,
-    0 0 70px #ff0000,
-    0 0 140px rgba(255,0,0,0.5);
+    filter:
+    drop-shadow(0 0 25px rgba(255,0,0,0.35))
+    drop-shadow(0 0 70px rgba(255,0,0,0.25));
 
-    animation:neonPulse 2s infinite alternate;
+    animation:logoFloat 4s ease-in-out infinite;
 }
 
-@keyframes neonPulse{
+@keyframes logoFloat{
 
-    from{
-        filter:brightness(1);
+    0%{
+        transform:translateY(0px);
     }
 
-    to{
-        filter:brightness(1.4);
+    50%{
+        transform:translateY(-8px);
+    }
+
+    100%{
+        transform:translateY(0px);
     }
 
 }
@@ -517,7 +533,7 @@ TARIFS
 }
 
 .tarif{
-    font-size:48px;
+    font-size:42px;
     color:#ff1e1e;
     font-weight:700;
     margin-bottom:20px;
@@ -704,7 +720,6 @@ footer{
     margin-top: 15px;
     line-height: 1.6;
 }
-   
 
 /* =========================
 ANIMATION
@@ -741,8 +756,8 @@ RESPONSIVE
 
 @media(max-width:900px){
 
-    .main-title{
-        font-size:64px;
+    .hero-logo img{
+        width:350px;
     }
 
     .hero-box{
@@ -765,8 +780,8 @@ RESPONSIVE
         gap:18px;
     }
 
-    .main-title{
-        font-size:52px;
+    .hero-logo img{
+        width:270px;
     }
 
     .section-title h2{
@@ -783,18 +798,10 @@ RESPONSIVE
 
 }
 
-/* =========================
-VERY SMALL MOBILE
-========================= */
-
 @media(max-width:480px){
 
     .hero{
         padding-top:180px;
-    }
-
-    .main-title{
-        font-size:42px;
     }
 
     .subtitle{
@@ -810,12 +817,16 @@ VERY SMALL MOBILE
     }
 
     .logo{
-        font-size:24px;
+        font-size:20px;
+    }
+
+    .logo img{
+        width:48px;
+        height:48px;
     }
 
 }
 
-    
 /* =========================
 CALENDRIER
 ========================= */
@@ -860,7 +871,12 @@ iframe {
 <nav>
 
     <div class="logo">
-        AUTO<span>DETAILING46</span>
+
+        <!-- REMPLACE LE LIEN PAR TON LOGO -->
+        <img src="https://i.postimg.cc/7Yk7K1qJ/autodetailing46-logo-japonais.png" alt="Logo">
+
+        <span>AutoDetailing46</span>
+
     </div>
 
     <div class="nav-links">
@@ -882,10 +898,12 @@ iframe {
             TOKYO UNDERGROUND GARAGE
         </div>
 
-        <h1 class="main-title">
-            AUTO
-            <span>DETAILING46</span>
-        </h1>
+        <div class="hero-logo">
+
+            <!-- REMPLACE LE LIEN PAR TON LOGO -->
+            <img src="https://i.postimg.cc/7Yk7K1qJ/autodetailing46-logo-japonais.png" alt="Auto Detailing 46">
+
+        </div>
 
         <div class="subtitle">
             Esthétique automobile premium •
@@ -902,365 +920,6 @@ iframe {
     </div>
 
 </section>
-
-<!-- PRESTATIONS -->
-
-<section class="section fade" id="services">
-
-    <div class="section-title">
-
-        <h2>PRESTATIONS</h2>
-
-        <div class="neon-line"></div>
-
-        <p>
-            Des finitions premium.
-        </p>
-
-    </div>
-
-    <div class="grid">
-
-        <!-- INTERIEUR -->
-
-        <div class="card">
-
-            <img src="https://www.dream-automotive.com/cdn/shop/collections/DREAM_FK2_INTAKE_711db3d2-8ae9-4f61-9e30-7ee403c66f2a.png?height=350&v=1610913980">
-
-            <div class="card-content">
-
-                <h3>Nettoyage intérieur</h3>
-
-                <p>
-                    Aspiration complète • Vapeur • Plastiques •
-                    Finition showroom premium.
-                </p>
-
-                <div class="price">
-                    À partir de 59€*
-                </div>
-
-            </div>
-
-        </div>
-
-        <!-- EXTERIEUR -->
-
-        <div class="card">
-
-            <img src="https://i.postimg.cc/qMjcP3vv/Chat-GPT-Image-25-mai-2026-08-25-21.png?raw=true">
-
-            <div class="card-content">
-
-                <h3>Lavage extérieur</h3>
-
-                <p>
-                    Mousse active • Jantes • Brillance miroir •
-                    Effet wet look • Décontamination.
-                </p>
-
-                <div class="price">
-                    À partir de 49€*
-                </div>
-
-            </div>
-
-        </div>
-
-        <!-- POLISSAGE -->
-
-        <div class="card">
-
-            <img src="https://images.unsplash.com/photo-1583267746897-2cf415887172?q=80&w=1200">
-
-            <div class="card-content">
-
-                <h3>Polissage miroir</h3>
-
-                <p>
-                    Correction rayures • Brillance intense • Céramique • WAX •
-                    Rendu ultra premium.
-                </p>
-
-                <div class="price">
-                    Sur devis
-                </div>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-<!-- TARIFS -->
-
-<section class="section fade" id="tarifs">
-
-    <div class="section-title">
-
-        <h2>TARIFS</h2>
-
-        <div class="neon-line"></div>
-
-    </div>
-
-    <div class="tarifs">
-
-        <div class="tarif-box">
-
-            <h3>BASIC</h3>
-
-            <div class="tarif">
-                à partir de 108€**
-            </div>
-
-            <p>
-                Lavage extérieur + interieur
-            </p>
-
-        </div>
-
-        <div class="tarif-box">
-
-            <h3>PREMIUM</h3>
-
-            <div class="tarif">
-                à partir de 159€**
-            </div>
-
-            <p>
-                Intérieur + extérieur complet
-            </p>
-
-        </div>
-
-        <div class="tarif-box">
-
-            <h3>SHOWROOM</h3>
-
-            <div class="tarif">
-                sur devis
-            </div>
-
-            <p>
-                Détailling prémium + finition luxe 
-            </p>
-
-        </div>
-
-    </div>
-
-</section>
-
-<!-- GALERIE -->
-
-<section class="section fade" id="galerie">
-
-    <div class="section-title">
-
-        <h2>GALERIE</h2>
-
-        <div class="neon-line"></div>
-
-    </div>
-
-
-<div class="gallery">
-
-    <!-- HONDA FK2 WHITE -->
-    <img src="https://images.cdn.autocar.co.uk/sites/autocar.co.uk/files/styles/gallery_slide/public/images/car-reviews/first-drives/legacy/ctr_1.jpg?itok=3bKc3i6P">
-
-    <!-- ASTRA J OPC -->
-    <img src="https://images.caradisiac.com/images/2/9/2/5/202925/S1-opel-astra-j-opc-2012-2015-la-derniere-bombe-du-blitz-des-15-000-eur-759661.jpg">
-
-    <!-- SUV HONDA CRV STYLE -->
-    <img src="https://images.largus.fr/images/images/honda-cr-v-2018-marron-7-places-4x4-31.jpg">
-
-</div>
-
-
-</section>
-
-<!-- CONTACT -->
-
-<section class="section fade" id="contact">
-
-    <div class="contact-box">
-
-        <div class="section-title">
-
-            <h2>CONTACT</h2>
-
-            <div class="neon-line"></div>
-
-        </div>
-
-        
-
-<form id="contact-form">
-
-    <input type="text" name="nom" placeholder="Nom" required>
-
-    <input type="email" name="email" placeholder="Email" required>
-
-    <input type="tel" name="telephone" placeholder="Téléphone">
-
-    <textarea name="message" placeholder="Votre demande"></textarea>
-
-    <button type="submit" class="btn">
-        ENVOYER
-         </button>
-
-
-</form>
-
-
-<h3 class="calendar-title">
-    📅 Réservez votre créneau en ligne
-</h3>
-
-
-
-<div style="margin-top:40px;">
-
-    <iframe
-        src="https://calendly.com/autodetailing46/30mn?hide_event_type_details=1&hide_gdpr_banner=1"
-        width="100%"
-        height="700"
-        frameborder="0">
-    </iframe>
-
-</div>
-
-
-
-        <div class="socials">
-
-            <a href="#">
-                📸
-            </a>
-
-            <a href="#">
-                📘
-            </a>
-
-        </div>
-
-    </div>
-
-</section>
-
-<!-- WHATSAPP -->
-
-<a href="https://wa.me/33662550681" class="whatsapp">
-💬
-</a>
-
-<!-- FOOTER -->
-
-
-<footer>
-© 2026 AutoDetailing46 • Service de detailing automobile dans le département du Lot.
-
-<div class="footer-notes">
-* Le prix peut varier en fonction de la catégorie et de l’état du véhicule.<br>
-** Les prix peuvent varier selon le niveau de prestations demandées.
-</div>
-
-</footer>
-
-
-<!-- SCRIPT -->
-
-<script>
-
-/* =========================
-FADE ANIMATION
-========================= */
-
-const fades = document.querySelectorAll('.fade');
-
-function showOnScroll(){
-
-    fades.forEach((fade)=>{
-
-        const top =
-        fade.getBoundingClientRect().top;
-
-        if(top < window.innerHeight - 100){
-
-            fade.classList.add('show');
-
-        }
-
-    });
-
-}
-
-window.addEventListener('scroll',showOnScroll);
-
-showOnScroll();
-
-/* =========================
-RAIN GENERATOR
-========================= */
-
-const rain =
-document.getElementById("rain");
-
-for(let i = 0; i < 90; i++){
-
-    const drop =
-    document.createElement("span");
-
-    drop.style.left =
-    Math.random() * 100 + "%";
-
-    drop.style.animationDuration =
-    (Math.random() * 1 + 0.5) + "s";
-
-    drop.style.animationDelay =
-    Math.random() * 5 + "s";
-
-    drop.style.opacity =
-    Math.random();
-
-    drop.style.height =
-    (Math.random() * 100 + 40) + "px";
-
-    rain.appendChild(drop);
-
-}
-
-</script>
-
-<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
-
-<script>
-(function(){
-    emailjs.init("AGy8UYGdY6vqHTfx0");
-})();
-</script>
-
-<script>
-document.getElementById("contact-form").addEventListener("submit", function(e) {
-    e.preventDefault();
-
-    emailjs.sendForm(
-        'service_lt7pny8',
-        'template_8ebt0li',
-        this
-    )
-    .then(function() {
-        alert("✅ Message envoyé !");
-    }, function(error) {
-        alert("❌ Erreur d'envoi");
-        console.log(error);
-    });
-});
-</script>
 
 </body>
 </html>
