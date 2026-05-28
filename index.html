@@ -284,55 +284,31 @@ HERO LOGO
 ========================= */
 
 .hero-logo{
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    margin-bottom:10px;
-}
 
-.hero-logo img{
+    width:320px;
+    max-width:85%;
 
-    width:340px;
-    max-width:90%;
+    margin:
+    10px auto 25px;
+
+    display:block;
+
     object-fit:contain;
 
-    mix-blend-mode:screen;
-
     filter:
-    drop-shadow(0 0 12px rgba(255,0,0,0.25))
-    drop-shadow(0 0 35px rgba(255,0,0,0.18));
-
-    animation:logoFloat 5s ease-in-out infinite;
+    drop-shadow(0 0 18px rgba(255,0,0,0.35));
 
     transition:0.4s;
 }
 
-.hero-logo img:hover{
+.hero-logo:hover{
 
     transform:scale(1.03);
 
     filter:
-    drop-shadow(0 0 18px rgba(255,0,0,0.4))
-    drop-shadow(0 0 50px rgba(255,0,0,0.25));
+    drop-shadow(0 0 30px rgba(255,0,0,0.5));
 
 }
-
-@keyframes logoFloat{
-
-    0%{
-        transform:translateY(0px);
-    }
-
-    50%{
-        transform:translateY(-6px);
-    }
-
-    100%{
-        transform:translateY(0px);
-    }
-
-}
-
 /* =========================
 BUTTON
 ========================= */
@@ -894,11 +870,12 @@ iframe {
             TOKYO UNDERGROUND GARAGE
         </div>
 
-       <div class="hero-logo">
-
-    <img src="https://i.postimg.cc/ZnmP024s/Chat-GPT-Image-28-mai-2026-19-04-40.png" alt="AutoDetailing46 Logo">
-
-</div>
+        <!-- LOGO -->
+        <img 
+            src="TON-LIEN-LOGO.png"
+            alt="AutoDetailing46 Logo"
+            class="hero-logo"
+        >
 
         <div class="subtitle">
             Esthétique automobile premium •
