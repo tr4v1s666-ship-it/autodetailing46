@@ -240,7 +240,7 @@ nav{
 HERO
 ========================= */
 
-.hero{
+{
     min-height:100vh;
 
     display:flex;
@@ -287,20 +287,34 @@ HERO LOGO
     display:flex;
     justify-content:center;
     align-items:center;
-    margin-bottom:20px;
+    margin-bottom:10px;
 }
 
 .hero-logo img{
 
-    width:520px;
-    max-width:100%;
+    width:340px;
+    max-width:90%;
     object-fit:contain;
 
-    filter:
-    drop-shadow(0 0 25px rgba(255,0,0,0.35))
-    drop-shadow(0 0 60px rgba(255,0,0,0.25));
+    mix-blend-mode:screen;
 
-    animation:logoFloat 4s ease-in-out infinite;
+    filter:
+    drop-shadow(0 0 12px rgba(255,0,0,0.25))
+    drop-shadow(0 0 35px rgba(255,0,0,0.18));
+
+    animation:logoFloat 5s ease-in-out infinite;
+
+    transition:0.4s;
+}
+
+.hero-logo img:hover{
+
+    transform:scale(1.03);
+
+    filter:
+    drop-shadow(0 0 18px rgba(255,0,0,0.4))
+    drop-shadow(0 0 50px rgba(255,0,0,0.25));
+
 }
 
 @keyframes logoFloat{
@@ -310,56 +324,13 @@ HERO LOGO
     }
 
     50%{
-        transform:translateY(-8px);
+        transform:translateY(-6px);
     }
 
     100%{
         transform:translateY(0px);
     }
 
-}
-.main-title{
-    font-family:'Orbitron',sans-serif;
-    font-size:95px;
-    line-height:0.95;
-    margin-bottom:25px;
-}
-
-.main-title span{
-    display:block;
-    color:#ff1e1e;
-
-    text-shadow:
-    0 0 10px #ff0000,
-    0 0 30px #ff0000,
-    0 0 70px #ff0000,
-    0 0 140px rgba(255,0,0,0.5);
-
-    animation:neonPulse 2s infinite alternate;
-}
-
-@keyframes neonPulse{
-
-    from{
-        filter:brightness(1);
-    }
-
-    to{
-        filter:brightness(1.4);
-    }
-
-}
-
-.subtitle{
-    font-size:22px;
-    color:#dddddd;
-    margin-bottom:20px;
-}
-
-.tagline{
-    color:#b0b0b0;
-    line-height:1.8;
-    margin-bottom:40px;
 }
 
 /* =========================
