@@ -240,7 +240,7 @@ nav{
 HERO
 ========================= */
 
-{
+.hero{
     min-height:100vh;
 
     display:flex;
@@ -279,36 +279,51 @@ HERO
     font-size:14px;
     margin-bottom:18px;
 }
-/* =========================
-HERO LOGO
-========================= */
 
-.hero-logo{
+.main-title{
+    font-family:'Orbitron',sans-serif;
+    font-size:95px;
+    line-height:0.95;
+    margin-bottom:25px;
+}
 
-    width:320px;
-    max-width:85%;
-
-    margin:
-    10px auto 25px;
-
+.main-title span{
     display:block;
+    color:#ff1e1e;
 
-    object-fit:contain;
+    text-shadow:
+    0 0 10px #ff0000,
+    0 0 30px #ff0000,
+    0 0 70px #ff0000,
+    0 0 140px rgba(255,0,0,0.5);
 
-    filter:
-    drop-shadow(0 0 18px rgba(255,0,0,0.35));
-
-    transition:0.4s;
+    animation:neonPulse 2s infinite alternate;
 }
 
-.hero-logo:hover{
+@keyframes neonPulse{
 
-    transform:scale(1.03);
+    from{
+        filter:brightness(1);
+    }
 
-    filter:
-    drop-shadow(0 0 30px rgba(255,0,0,0.5));
+    to{
+        filter:brightness(1.4);
+    }
 
 }
+
+.subtitle{
+    font-size:22px;
+    color:#dddddd;
+    margin-bottom:20px;
+}
+
+.tagline{
+    color:#b0b0b0;
+    line-height:1.8;
+    margin-bottom:40px;
+}
+
 /* =========================
 BUTTON
 ========================= */
@@ -737,9 +752,6 @@ RESPONSIVE
 }
 
 @media(max-width:768px){
-    .hero-logo img{
-    width:290px;
-}
 
     nav{
         flex-direction:column;
@@ -870,12 +882,11 @@ iframe {
             TOKYO UNDERGROUND GARAGE
         </div>
 
-        <!-- LOGO -->
-        <img 
-            src="https://i.postimg.cc/G2GNZWMw/Chat-GPT-Image-28-mai-2026-19-20-09.png"
-            alt="AutoDetailing46 Logo"
-            class="hero-logo"
-        >
+     <div class="hero-logo">
+
+    <img src="https://i.postimg.cc/G2GNZWMw/Chat-GPT-Image-28-mai-2026-19-20-09.png" alt="AutoDetailing46 Logo">
+
+</div>
 
         <div class="subtitle">
             Esthétique automobile premium •
