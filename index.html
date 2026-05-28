@@ -279,7 +279,45 @@ HERO
     font-size:14px;
     margin-bottom:18px;
 }
+/* =========================
+HERO LOGO
+========================= */
 
+.hero-logo{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    margin-bottom:20px;
+}
+
+.hero-logo img{
+
+    width:520px;
+    max-width:100%;
+    object-fit:contain;
+
+    filter:
+    drop-shadow(0 0 25px rgba(255,0,0,0.35))
+    drop-shadow(0 0 60px rgba(255,0,0,0.25));
+
+    animation:logoFloat 4s ease-in-out infinite;
+}
+
+@keyframes logoFloat{
+
+    0%{
+        transform:translateY(0px);
+    }
+
+    50%{
+        transform:translateY(-8px);
+    }
+
+    100%{
+        transform:translateY(0px);
+    }
+
+}
 .main-title{
     font-family:'Orbitron',sans-serif;
     font-size:95px;
@@ -752,6 +790,9 @@ RESPONSIVE
 }
 
 @media(max-width:768px){
+    .hero-logo img{
+    width:290px;
+}
 
     nav{
         flex-direction:column;
@@ -882,10 +923,11 @@ iframe {
             TOKYO UNDERGROUND GARAGE
         </div>
 
-        <h1 class="main-title">
-            AUTO
-            <span>DETAILING46</span>
-        </h1>
+       <div class="hero-logo">
+
+    <img src="https://i.postimg.cc/ZnmP024s/Chat-GPT-Image-28-mai-2026-19-04-40.png" alt="AutoDetailing46 Logo">
+
+</div>
 
         <div class="subtitle">
             Esthétique automobile premium •
