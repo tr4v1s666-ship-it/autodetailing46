@@ -837,6 +837,41 @@ iframe {
     box-shadow: 0 0 30px rgba(255,0,0,0.2);
 }
 
+/* =========================
+LOGO HERO
+========================= */
+
+.hero-logo {
+    width: 160px;
+    max-width: 75%;
+    margin: 0 auto 25px;
+    display: block;
+
+    /* glow rouge */
+    filter: drop-shadow(0 0 25px rgba(255, 0, 0, 0.6));
+
+    /* animation */
+    opacity: 0;
+    transform: scale(0.85);
+
+    animation: logoReveal 1.2s ease forwards,
+               logoFloat 5s ease-in-out infinite 1.2s;
+}
+
+/* apparition */
+@keyframes logoReveal {
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* flottement premium */
+@keyframes logoFloat {
+    0%,100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
 </style>
 
 </head>
@@ -874,12 +909,16 @@ iframe {
 
 <!-- HERO -->
 
+
 <section class="hero">
 
     <div class="hero-box">
 
+        <!-- LOGO -->
+        <img src="https://i.postimg.cc/gcDhC7Jf/Adobe-Express-file.png" alt="AutoDetailing46 Logo" class="hero-logo">
+
         <div class="japan-text">
-            Saint céré & alentours
+            Saint-Céré & alentours
         </div>
 
         <h1 class="main-title">
@@ -902,6 +941,7 @@ iframe {
     </div>
 
 </section>
+
 
 <!-- PRESTATIONS -->
 
