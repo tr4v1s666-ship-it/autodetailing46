@@ -874,6 +874,65 @@ LOGO HERO
     50% { transform: translateY(-10px); }
 }
 
+/* =========================
+SOCIAL NEON
+========================= */
+
+.socials a i {
+    font-size: 28px;
+    color: #ff1e1e;
+    transition: 0.3s;
+
+    text-shadow:
+        0 0 5px #ff0000,
+        0 0 15px #ff0000,
+        0 0 30px #ff0000;
+}
+
+/* animation néon */
+@keyframes neonPulseSocial {
+    from {
+        text-shadow:
+            0 0 5px #ff0000,
+            0 0 10px #ff0000;
+    }
+    to {
+        text-shadow:
+            0 0 20px #ff0000,
+            0 0 40px #ff0000;
+    }
+}
+
+.socials a i {
+    animation: neonPulseSocial 2s infinite alternate;
+}
+
+/* hover */
+.socials a:hover i {
+    color: white;
+
+    text-shadow:
+        0 0 10px #ff0000,
+        0 0 25px #ff0000,
+        0 0 60px #ff0000,
+        0 0 120px rgba(255, 0, 0, 0.6);
+
+    transform: scale(1.2);
+}
+
+/* cercle glow */
+.socials a {
+    box-shadow:
+        0 0 10px rgba(255,0,0,0.3),
+        0 0 25px rgba(255,0,0,0.2);
+}
+
+.socials a:hover {
+    box-shadow:
+        0 0 20px #ff0000,
+        0 0 50px rgba(255,0,0,0.5);
+}
+    
 </style>
 
 </head>
